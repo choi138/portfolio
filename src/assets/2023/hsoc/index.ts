@@ -1,0 +1,9 @@
+export { default as Hsoc1Png } from './hsoc1.png';
+export { default as Hsoc2Png } from './hsoc2.png';
+export { default as Hsoc3Png } from './hsoc3.png';
+export { default as Hsoc4Png } from './hsoc4.png';
+export { default as Hsoc5Png } from './hsoc5.png';
+export { default as Hsoc6Png } from './hsoc6.png';
+export { default as Hsoc7Png } from './hsoc7.png';
+export { default as Hsoc8Png } from './hsoc8.png';
+export { default as Hsoc9Png } from './hsoc9.png';
