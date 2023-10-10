@@ -2,14 +2,19 @@ import styled from '@emotion/styled';
 
 export const MainPageContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 740px;
-  padding: 3rem 1rem;
-  row-gap: 3.4rem;
+  scroll-behavior: smooth;
 `;
 
-export const MainPageProjectContainer = styled.div`
+export const MainPageSection = styled.div`
   width: 100%;
-  display: flex;
+  height: 100vh;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: auto;
+`;
+
+export const MainPageBgSection = styled(MainPageSection)`
+  background-color: #fefefe;
+  align-items: center;
+  justify-content: center;
 `;

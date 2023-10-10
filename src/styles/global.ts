@@ -10,6 +10,9 @@ export const globalStyle = css`
     &:focus {
       outline: none;
     }
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   html {
@@ -21,9 +24,9 @@ export const globalStyle = css`
   #app,
   #root,
   #__next {
-    width: 100%;
     display: flex;
-    justify-content: center;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
     height: 100%;
     color: ${colors.black};
     background-color: ${colors.white};
