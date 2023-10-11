@@ -1,7 +1,10 @@
+import { FiChevronRight } from 'react-icons/fi';
+
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { BackgroundImage } from 'src/assets';
+import { colors } from 'src/styles';
 
 export const MainPageContainer = styled.div`
   display: flex;
@@ -24,6 +27,8 @@ export const MainPageBgSection = styled(MainPageSection)`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  flex-direction: column;
+  row-gap: 5rem;
 `;
 
 export const MainPageBottomImage = styled.img`
@@ -43,79 +48,48 @@ export const MainPageTextWrapper = styled.div`
   border-radius: 0.4rem;
 `;
 
-const tailAnimation = keyframes`
-  0% {
-    width: 0;
+const move = keyframes`
+0% {
+    transform: translateX(40px);
+}
+25% {
+    opacity: 1;
+}
+33% {
+    opacity: 1;
+    transform: translateX(65px); /* Adjusted translateX value */
   }
-  30% {
-    width: 100px;
+  67% {
+    opacity: 1;
+    transform: translateX(80px); /* Adjusted translateX value */
   }
   100% {
-    width: 0;
+    opacity: 0;
+    transform: translateX(100px) scale3d(0.5, 0.5, 0.5); /* Adjusted translateX value */
   }
 `;
 
-const shootingAnimation = keyframes`
-  0% {
-    transform: translateX(0);
+export const MainPageIconContainer = styled.div`
+  position: relative;
+  right: 5.5rem;
+  display: flex;
+  align-items: center;
+  column-gap: 10rem;
+  animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  & > :first-child {
+    animation: ${move} 3s ease-out 1s infinite;
   }
-  100% {
-    transform: translateX(300px);
+  & > :nth-child(2) {
+    animation: ${move} 3s ease-out 2s infinite;
   }
 `;
 
-// Styled Components
-export const Night = styled.div`
+export const MainPageIcon = styled(FiChevronRight)`
   position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: rotateZ(130deg);
+  color: ${colors.white};
+  width: 2.6rem;
+  height: 2.6rem;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: ${move} 3s ease-out infinite;
 `;
-
-export const ShootingStar = styled.div`
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 2px;
-  background: #5f91ff;
-  border-radius: 999px;
-  animation:
-    ${tailAnimation} 1300ms ease-in-out infinite,
-    ${shootingAnimation} 1300ms ease-in-out infinite;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: calc(50% - 1px);
-    height: 1000px;
-    background: #5f91ff;
-    border-radius: 100%;
-  }
-
-  &::before {
-    left: 0;
-    transform: translateX(50%) rotateZ(45deg);
-  }
-
-  &::after {
-    right: 0;
-    transform: translateX(50%) rotateZ(-45deg);
-  }
-`;
-
-const generateShootingStar = (top: string, left: string, delay: string) => styled(ShootingStar)`
-  top: calc(20% - ${top});
-  left: calc(20% - ${left});
-  animation-delay: ${delay};
-`;
-export const ShootingStar1 = generateShootingStar('-43px', '-35px', '9586ms');
-export const ShootingStar2 = generateShootingStar('-197px', '-189px', '9121ms');
-export const ShootingStar3 = generateShootingStar('-144px', '-88px', '225ms');
-// export const ShootingStar4 = generateShootingStar(-160px, -44px, '7925ms');
-// export const ShootingStar5 = generateShootingStar(-170px, -300px, '53ms');
-// export const ShootingStar6 = generateShootingStar(-189px, -216px, '6474ms');
-// export const ShootingStar7 = generateShootingStar(-83px, -17px, '6425ms');
-// export const ShootingStar8 = generateShootingStar(-146px, -223px, '6887ms');
-// export const ShootingStar9 = generateShootingStar(-111px, -158px, '6762ms');
-// export const ShootingStar10 = generateShootingStar(-144px, -88px, '1565ms');

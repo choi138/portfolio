@@ -30,11 +30,6 @@ export const MainPage: React.FC = () => {
     <>
       <S.MainPageBgSection ref={(el) => (sectionsRef.current[0] = el!)}>
         <S.MainPageBottomImage src={Background2Image} />
-        <S.Night>
-          <S.ShootingStar1 />
-          <S.ShootingStar2 />
-          <S.ShootingStar3 />
-        </S.Night>
         <TextContainer
           style={{ position: 'relative', zIndex: 10 }}
           rowGap={1}
@@ -52,6 +47,11 @@ export const MainPage: React.FC = () => {
             </TextContainer>
           </Text>
         </TextContainer>
+        <S.MainPageIconContainer>
+          <S.MainPageIcon />
+          <S.MainPageIcon />
+          <S.MainPageIcon />
+        </S.MainPageIconContainer>
       </S.MainPageBgSection>
       <S.MainPageSection ref={(el) => (sectionsRef.current[1] = el!)}>
         <button onClick={hanlePrev}>prev</button> This is MainPage 1 section{' '}
@@ -60,7 +60,6 @@ export const MainPage: React.FC = () => {
       <S.MainPageSection ref={(el) => (sectionsRef.current[2] = el!)}>
         <button onClick={hanlePrev}>prev</button> This is MainPage 2 section{' '}
       </S.MainPageSection>
-      {/* Add more sections with refs and buttons as needed */}
     </>
   );
 };
