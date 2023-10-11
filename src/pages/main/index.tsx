@@ -1,20 +1,66 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+
+import { Text, TextContainer } from '@choi138/react-text';
+
+import { Background2Image } from 'src/assets';
+import { colors } from 'src/styles';
 
 import * as S from './styled';
 
 export const MainPage: React.FC = () => {
+  const [currentSection, setCurrentSection] = useState(0);
+  const sectionsRef = useRef<HTMLDivElement[]>([]);
+  const handleNext = () => {
+    if (currentSection === sectionsRef.current.length - 1) return;
+    setCurrentSection((prev) => prev + 1);
+    sectionsRef.current[currentSection + 1].scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
+  const hanlePrev = () => {
+    if (currentSection === 0) return;
+    setCurrentSection((prev) => prev - 1);
+    sectionsRef.current[currentSection - 1].scrollIntoView({
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <>
-      <S.MainPageSection>
-        <h1>as.MainPageContainerdf</h1>
-      </S.MainPageSection>
-      <S.MainPageBgSection>
-        <h1>Hello</h1>
-        <button>next</button>
+      <S.MainPageBgSection ref={(el) => (sectionsRef.current[0] = el!)}>
+        <S.MainPageBottomImage src={Background2Image} />
+        <S.Night>
+          <S.ShootingStar1 />
+          <S.ShootingStar2 />
+          <S.ShootingStar3 />
+        </S.Night>
+        <TextContainer
+          style={{ position: 'relative', zIndex: 10 }}
+          rowGap={1}
+          alignItems="center"
+          flexDirection="column"
+        >
+          <TextContainer>
+            <Text size={3.4} color={colors.white} weight={600}>
+              끊임없이 배우고 성장하는 <br />
+            </Text>
+          </TextContainer>
+          <Text size={3.4} color={colors.white} weight={600}>
+            <TextContainer alignItems="center">
+              FE 개발자 <S.MainPageTextWrapper>최근원</S.MainPageTextWrapper>입니다.
+            </TextContainer>
+          </Text>
+        </TextContainer>
       </S.MainPageBgSection>
-      <S.MainPageSection>
-        <h1>My name is choi138</h1>
+      <S.MainPageSection ref={(el) => (sectionsRef.current[1] = el!)}>
+        <button onClick={hanlePrev}>prev</button> This is MainPage 1 section{' '}
+        <button onClick={handleNext}>next</button>
       </S.MainPageSection>
+      <S.MainPageSection ref={(el) => (sectionsRef.current[2] = el!)}>
+        <button onClick={hanlePrev}>prev</button> This is MainPage 2 section{' '}
+      </S.MainPageSection>
+      {/* Add more sections with refs and buttons as needed */}
     </>
   );
 };

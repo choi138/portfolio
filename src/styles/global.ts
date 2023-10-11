@@ -24,10 +24,11 @@ export const globalStyle = css`
   #app,
   #root,
   #__next {
+    width: 100%;
+    height: 100%;
     display: flex;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    height: 100%;
     color: ${colors.black};
     background-color: ${colors.white};
   }
@@ -64,7 +65,7 @@ export const globalStyle = css`
     }
 
     @media screen and (max-width: 500px) and (min-width: 300px) {
-      font-size: 14px;
+      font-size: 9px;
     }
   }
 `;
