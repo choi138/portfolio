@@ -3,7 +3,6 @@ import { FiChevronRight } from 'react-icons/fi';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { BackgroundImage } from 'src/assets';
 import { colors } from 'src/styles';
 
 export const MainPageContainer = styled.div`
@@ -20,13 +19,10 @@ export const MainPageSection = styled.div`
 `;
 
 export const MainPageBgSection = styled(MainPageSection)`
+  background: linear-gradient(0deg, #4c52c0 61%, #1c156a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(${BackgroundImage});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   flex-direction: column;
   row-gap: 5rem;
 `;
@@ -36,7 +32,18 @@ export const MainPageBottomImage = styled.img`
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+`;
+
+export const MainPageCanvas = styled.canvas`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: auto;
+  z-index: 0;
 `;
 
 export const MainPageTextWrapper = styled.div`
@@ -70,6 +77,7 @@ const move = keyframes`
 `;
 
 export const MainPageIconContainer = styled.div`
+  z-index: 3;
   position: relative;
   right: 5.5rem;
   display: flex;

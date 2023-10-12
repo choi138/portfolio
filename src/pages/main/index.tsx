@@ -1,9 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import { Text, TextContainer } from '@choi138/react-text';
 
-import { Background2Image } from 'src/assets';
+import { BackgroundImage } from 'src/assets';
 import { colors } from 'src/styles';
+import { animation } from 'src/utils';
 
 import * as S from './styled';
 
@@ -26,12 +27,35 @@ export const MainPage: React.FC = () => {
     });
   };
 
+  useEffect(() => {
+    const bgImage = new Image();
+    bgImage.src = BackgroundImage;
+
+    // Check if the image is already cached (loaded)
+    if (!BackgroundImage) {
+      console.log('cached');
+      // window loading
+      window.onload = () => {
+        animation('bgCanvas');
+      };
+    } else {
+      animation('bgCanvas');
+    }
+
+    return () => {
+      bgImage.removeEventListener('load', () => {
+        animation('bgCanvas');
+      });
+    };
+  }, []);
+
   return (
     <>
       <S.MainPageBgSection ref={(el) => (sectionsRef.current[0] = el!)}>
-        <S.MainPageBottomImage src={Background2Image} />
+        <S.MainPageBottomImage src={BackgroundImage} />
+        <S.MainPageCanvas id="bgCanvas"></S.MainPageCanvas>
         <TextContainer
-          style={{ position: 'relative', zIndex: 10 }}
+          style={{ position: 'relative', zIndex: 2 }}
           rowGap={1}
           alignItems="center"
           flexDirection="column"
@@ -47,7 +71,7 @@ export const MainPage: React.FC = () => {
             </TextContainer>
           </Text>
         </TextContainer>
-        <S.MainPageIconContainer>
+        <S.MainPageIconContainer onClick={handleNext}>
           <S.MainPageIcon />
           <S.MainPageIcon />
           <S.MainPageIcon />
