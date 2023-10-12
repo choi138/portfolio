@@ -28,7 +28,7 @@ export const animation = (id: string) => {
 
     constructor(options: { x: number; y: number }) {
       this.size = Math.random() * 2;
-      this.speed = Math.random() * 0.05;
+      this.speed = Math.random() * 0.094;
       this.x = options.x;
       this.y = options.y;
     }

@@ -32,7 +32,7 @@ export const MainPageBottomImage = styled.img`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   z-index: 1;
 `;
@@ -46,13 +46,30 @@ export const MainPageCanvas = styled.canvas`
   z-index: 0;
 `;
 
+const translate = keyframes`
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: .8;
+}
+`;
+
 export const MainPageTextWrapper = styled.div`
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: ${colors.white};
   width: fit-content;
   color: #5452b8;
   margin: 0 0.8rem;
   border-radius: 0.4rem;
+  transition:
+    color 1s,
+    background-color 1s;
+  animation: ${translate} 2s ease-in-out infinite alternate;
+  &:hover {
+    background-color: transparent;
+    color: ${colors.white};
+  }
 `;
 
 const move = keyframes`

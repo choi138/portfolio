@@ -31,16 +31,9 @@ export const MainPage: React.FC = () => {
     const bgImage = new Image();
     bgImage.src = BackgroundImage;
 
-    // Check if the image is already cached (loaded)
-    if (!BackgroundImage) {
-      console.log('cached');
-      // window loading
-      window.onload = () => {
-        animation('bgCanvas');
-      };
-    } else {
+    window.addEventListener('load', function () {
       animation('bgCanvas');
-    }
+    });
 
     return () => {
       bgImage.removeEventListener('load', () => {
