@@ -5,6 +5,36 @@ import styled from '@emotion/styled';
 
 import { colors } from 'src/styles';
 
+const move = keyframes`
+0% {
+    transform: translateX(40px);
+}
+25% {
+    opacity: 1;
+}
+33% {
+    opacity: 1;
+    transform: translateX(65px); /* Adjusted translateX value */
+  }
+  67% {
+    opacity: 1;
+    transform: translateX(80px); /* Adjusted translateX value */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100px) scale3d(0.5, 0.5, 0.5); /* Adjusted translateX value */
+  }
+`;
+
+const translate = keyframes`
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: .8;
+}
+`;
+
 export const MainPageContainer = styled.div`
   display: flex;
   scroll-behavior: smooth;
@@ -46,21 +76,12 @@ export const MainPageCanvas = styled.canvas`
   z-index: 0;
 `;
 
-const translate = keyframes`
-0% {
-    opacity: 1;
-}
-100% {
-    opacity: .8;
-}
-`;
-
-export const MainPageTextWrapper = styled.div`
+export const MainPageTextWrapper = styled.span`
   padding: 10px;
   background-color: ${colors.white};
   width: fit-content;
   color: #5452b8;
-  margin: 0 0.8rem;
+  margin: 0 0.6rem;
   border-radius: 0.4rem;
   transition:
     color 1s,
@@ -72,39 +93,19 @@ export const MainPageTextWrapper = styled.div`
   }
 `;
 
-const move = keyframes`
-0% {
-    transform: translateX(40px);
-}
-25% {
-    opacity: 1;
-}
-33% {
-    opacity: 1;
-    transform: translateX(65px); /* Adjusted translateX value */
-  }
-  67% {
-    opacity: 1;
-    transform: translateX(80px); /* Adjusted translateX value */
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(100px) scale3d(0.5, 0.5, 0.5); /* Adjusted translateX value */
-  }
-`;
-
 export const MainPageIconContainer = styled.div`
+  width: 100%;
   z-index: 3;
   position: relative;
-  right: 5.5rem;
+  right: 70px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  column-gap: 10rem;
   animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1) !important;
-  & > :first-child {
+  & > :first-of-type {
     animation: ${move} 3s ease-out 1s infinite;
   }
-  & > :nth-child(2) {
+  & > :nth-of-type(2) {
     animation: ${move} 3s ease-out 2s infinite;
   }
 `;
@@ -117,4 +118,12 @@ export const MainPageIcon = styled(FiChevronRight)`
   opacity: 0;
   transform: scale3d(0.5, 0.5, 0.5);
   animation: ${move} 3s ease-out infinite;
+  @media screen and (max-width: 700px) and (min-width: 500px) {
+    width: 3rem;
+    height: 3rem;
+  }
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    width: 4.6rem;
+    height: 4.6rem;
+  }
 `;

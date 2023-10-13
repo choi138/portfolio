@@ -28,17 +28,16 @@ export const MainPage: React.FC = () => {
   };
 
   useEffect(() => {
-    const bgImage = new Image();
-    bgImage.src = BackgroundImage;
-
-    window.addEventListener('load', function () {
+    const handleLoad = () => {
       animation('bgCanvas');
-    });
+    };
+
+    handleLoad();
+
+    window.addEventListener('load', handleLoad);
 
     return () => {
-      bgImage.removeEventListener('load', () => {
-        animation('bgCanvas');
-      });
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
@@ -59,9 +58,7 @@ export const MainPage: React.FC = () => {
             </Text>
           </TextContainer>
           <Text size={3.4} color={colors.white} weight={600}>
-            <TextContainer alignItems="center">
-              FE 개발자 <S.MainPageTextWrapper>최근원</S.MainPageTextWrapper>입니다.
-            </TextContainer>
+            FE 개발자 <S.MainPageTextWrapper>최근원</S.MainPageTextWrapper>입니다.
           </Text>
         </TextContainer>
         <S.MainPageIconContainer onClick={handleNext}>
