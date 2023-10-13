@@ -28,8 +28,8 @@ export const Main: React.FC<MainProps> = ({ handleNext }) => {
   }, []);
   return (
     <>
-      <S.MainPageBottomImage src={BackgroundImage} />
-      <S.MainPageCanvas id="bgCanvas"></S.MainPageCanvas>
+      <S.MainBottomImage src={BackgroundImage} />
+      <S.MainCanvas id="bgCanvas"></S.MainCanvas>
       <TextContainer
         style={{ position: 'relative', zIndex: 2 }}
         rowGap={1}
@@ -37,24 +37,24 @@ export const Main: React.FC<MainProps> = ({ handleNext }) => {
         flexDirection="column"
       >
         <TextContainer>
-          <Text size={3.4} color={colors.white} weight={600}>
+          <S.MainText>
             끊임없이 배우고 성장하는 <br />
-          </Text>
+          </S.MainText>
         </TextContainer>
-        <Text size={3.4} color={colors.white} weight={600}>
-          FE 개발자 <S.MainPageTextWrapper>최근원</S.MainPageTextWrapper>입니다.
-        </Text>
+        <S.MainText>
+          FE 개발자 <S.MainTextWrapper>최근원</S.MainTextWrapper>입니다.
+        </S.MainText>
       </TextContainer>
       <TextContainer
         style={{ position: 'relative', zIndex: 3 }}
         flexDirection="column"
         rowGap={1.6}
       >
-        <S.MainPageIconContainer onClick={handleNext}>
-          <S.MainPageIcon />
-          <S.MainPageIcon />
-          <S.MainPageIcon />
-        </S.MainPageIconContainer>
+        <S.MainIconContainer onClick={handleNext}>
+          <S.MainIcon />
+          <S.MainIcon />
+          <S.MainIcon />
+        </S.MainIconContainer>
         <Text size={0.8} color={colors.white} weight={500}>
           클릭하여 시작하기
         </Text>

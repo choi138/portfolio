@@ -35,12 +35,12 @@ const translate = keyframes`
 }
 `;
 
-export const MainPageContainer = styled.div`
+export const MainContainer = styled.div`
   display: flex;
   scroll-behavior: smooth;
 `;
 
-export const MainPageSection = styled.div`
+export const MainSection = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
@@ -48,7 +48,7 @@ export const MainPageSection = styled.div`
   overflow-y: auto;
 `;
 
-export const MainPageBgSection = styled(MainPageSection)`
+export const MainBgSection = styled(MainSection)`
   background: linear-gradient(0deg, #4c52c0 61%, #1c156a 100%);
   display: flex;
   align-items: center;
@@ -57,7 +57,7 @@ export const MainPageBgSection = styled(MainPageSection)`
   row-gap: 5rem;
 `;
 
-export const MainPageBottomImage = styled.img`
+export const MainBottomImage = styled.img`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -67,7 +67,7 @@ export const MainPageBottomImage = styled.img`
   z-index: 1;
 `;
 
-export const MainPageCanvas = styled.canvas`
+export const MainCanvas = styled.canvas`
   position: absolute;
   top: 0;
   left: 0;
@@ -76,7 +76,7 @@ export const MainPageCanvas = styled.canvas`
   z-index: 0;
 `;
 
-export const MainPageTextWrapper = styled.span`
+export const MainTextWrapper = styled.span`
   padding: 10px;
   background-color: ${colors.white};
   width: fit-content;
@@ -93,9 +93,8 @@ export const MainPageTextWrapper = styled.span`
   }
 `;
 
-export const MainPageIconContainer = styled.div`
+export const MainIconContainer = styled.div`
   width: 100%;
-  /* z-index: 3; */
   position: relative;
   right: 70px;
   display: flex;
@@ -110,20 +109,21 @@ export const MainPageIconContainer = styled.div`
   }
 `;
 
-export const MainPageIcon = styled(FiChevronRight)`
+export const MainIcon = styled(FiChevronRight)`
   position: absolute;
   color: ${colors.white};
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 42px;
+  height: 42px;
   opacity: 0;
   transform: scale3d(0.5, 0.5, 0.5);
   animation: ${move} 3s ease-out infinite;
-  @media screen and (max-width: 700px) and (min-width: 500px) {
-    width: 3rem;
-    height: 3rem;
-  }
+`;
+
+export const MainText = styled.p`
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: ${colors.white};
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    width: 4.6rem;
-    height: 4.6rem;
+    font-size: 2.2rem;
   }
 `;

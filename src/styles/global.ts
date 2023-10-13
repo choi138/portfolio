@@ -65,7 +65,7 @@ export const globalStyle = css`
     }
 
     @media screen and (max-width: 500px) and (min-width: 300px) {
-      font-size: 9px;
+      font-size: 14px;
     }
   }
 `;
