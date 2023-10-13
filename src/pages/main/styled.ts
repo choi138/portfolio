@@ -14,15 +14,15 @@ const move = keyframes`
 }
 33% {
     opacity: 1;
-    transform: translateX(65px); /* Adjusted translateX value */
+    transform: translateX(65px); 
   }
   67% {
     opacity: 1;
-    transform: translateX(80px); /* Adjusted translateX value */
+    transform: translateX(80px); 
   }
   100% {
     opacity: 0;
-    transform: translateX(100px) scale3d(0.5, 0.5, 0.5); /* Adjusted translateX value */
+    transform: translateX(100px) scale3d(0.5, 0.5, 0.5); 
   }
 `;
 
@@ -35,9 +35,13 @@ const translate = keyframes`
 }
 `;
 
-export const MainPageContainer = styled.div`
+export const MainpageSectionContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: flex;
-  scroll-behavior: smooth;
+  flex-shrink: 0;
+  overflow-x: hidden;
 `;
 
 export const MainPageSection = styled.div`
@@ -46,6 +50,7 @@ export const MainPageSection = styled.div`
   position: relative;
   flex-shrink: 0;
   overflow-y: auto;
+  padding: 6rem 4rem 2rem 2rem;
 `;
 
 export const MainPageBgSection = styled(MainPageSection)`
@@ -55,6 +60,7 @@ export const MainPageBgSection = styled(MainPageSection)`
   justify-content: center;
   flex-direction: column;
   row-gap: 5rem;
+  z-index: 10;
 `;
 
 export const MainPageBottomImage = styled.img`
@@ -126,4 +132,17 @@ export const MainPageIcon = styled(FiChevronRight)`
     width: 4.6rem;
     height: 4.6rem;
   }
+`;
+
+export const NavbarContainer = styled.div<{ opacity?: number }>`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: ${({ opacity }) => opacity};
 `;
