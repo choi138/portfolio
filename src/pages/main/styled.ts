@@ -1,4 +1,5 @@
 import { FiChevronRight } from 'react-icons/fi';
+import { BiRightArrowAlt } from 'react-icons/bi';
 
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -59,6 +60,7 @@ export const MainPageBgSection = styled(MainPageSection)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 0 2rem;
   row-gap: 5rem;
   z-index: 10;
 `;
@@ -144,5 +146,11 @@ export const NavbarContainer = styled.div<{ opacity?: number }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: opacity 0.25s;
+  opacity: ${({ opacity }) => opacity};
+`;
+
+export const NavbarRightIcon = styled(BiRightArrowAlt)<{ opacity?: number }>`
+  transition: opacity 0.25s;
   opacity: ${({ opacity }) => opacity};
 `;

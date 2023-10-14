@@ -35,28 +35,6 @@ const translate = keyframes`
 }
 `;
 
-export const MainContainer = styled.div`
-  display: flex;
-  scroll-behavior: smooth;
-`;
-
-export const MainSection = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  flex-shrink: 0;
-  overflow-y: auto;
-`;
-
-export const MainBgSection = styled(MainSection)`
-  background: linear-gradient(0deg, #4c52c0 61%, #1c156a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  row-gap: 5rem;
-`;
-
 export const MainBottomImage = styled.img`
   position: absolute;
   bottom: 0;
@@ -117,13 +95,20 @@ export const MainIcon = styled(FiChevronRight)`
   opacity: 0;
   transform: scale3d(0.5, 0.5, 0.5);
   animation: ${move} 3s ease-out infinite;
+  @media screen and (max-width: 400px) {
+    width: 3rem;
+    height: 3rem;
+  }
 `;
 
 export const MainText = styled.p`
   font-size: 3.2rem;
   font-weight: 700;
   color: ${colors.white};
-  @media screen and (max-width: 500px) and (min-width: 300px) {
-    font-size: 2.2rem;
+  @media screen and (max-width: 500px) and (min-width: 400px) {
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 1.6rem;
   }
 `;

@@ -21,14 +21,16 @@ export const Main: React.FC<MainProps> = ({ handleNext }) => {
     handleLoad();
 
     window.addEventListener('load', handleLoad);
+    window.addEventListener('resize', handleLoad);
 
     return () => {
       window.removeEventListener('load', handleLoad);
+      window.removeEventListener('resize', handleLoad);
     };
   }, []);
   return (
     <>
-      <S.MainBottomImage src={BackgroundImage} />
+      <S.MainBottomImage src={BackgroundImage} loading="lazy" />
       <S.MainCanvas id="bgCanvas"></S.MainCanvas>
       <TextContainer
         style={{ position: 'relative', zIndex: 2 }}
@@ -55,7 +57,7 @@ export const Main: React.FC<MainProps> = ({ handleNext }) => {
           <S.MainIcon />
           <S.MainIcon />
         </S.MainIconContainer>
-        <Text size={0.8} color={colors.white} weight={500}>
+        <Text size={0.9} color={colors.white} weight={500}>
           클릭하여 시작하기
         </Text>
       </TextContainer>

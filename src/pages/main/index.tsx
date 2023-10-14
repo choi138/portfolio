@@ -1,7 +1,7 @@
 import React from 'react';
-import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
+import { BiLeftArrowAlt } from 'react-icons/bi';
 
-import { Main } from 'src/components';
+import { Introduce, Main } from 'src/components';
 import { useHandleSection } from 'src/hooks';
 
 import * as S from './styled';
@@ -15,15 +15,13 @@ export const MainPage: React.FC = () => {
         <Main handleNext={handleNext} />
       </S.MainPageBgSection>
       <S.MainPageSection ref={(el) => (sectionsRef.current[1] = el!)}>
-        This is MainPage 1 section
+        <Introduce />
       </S.MainPageSection>
       <S.MainPageSection ref={(el) => (sectionsRef.current[2] = el!)}>
-        {page !== 0 && (
-          <S.NavbarContainer>
-            <BiLeftArrowAlt size={30} onClick={handlePrev} />
-            {page < 2 && <BiRightArrowAlt size={30} onClick={handleNext} />}
-          </S.NavbarContainer>
-        )}
+        <S.NavbarContainer opacity={page !== 0 ? 1 : 0}>
+          <BiLeftArrowAlt size={30} onClick={handlePrev} />
+          <S.NavbarRightIcon size={30} onClick={handleNext} opacity={page === 2 ? 0 : 1} />
+        </S.NavbarContainer>
         This is MainPage 2 section
       </S.MainPageSection>
     </>
