@@ -25,7 +25,7 @@ export const IntroduceLi = styled.li`
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  margin: 1.5rem 0;
+  margin: 1.8rem 0;
 `;
 
 export const IntroduceLink = styled.a`
