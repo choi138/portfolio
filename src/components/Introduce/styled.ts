@@ -5,11 +5,17 @@ export const IntroduceContainer = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: min-content;
   grid-gap: 0 2rem;
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const IntroduceSection = styled.section`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
   padding: 1rem;
+  padding-top: 2rem;
 `;
 
 export const IntroduceArticle = styled.article`
@@ -26,6 +32,9 @@ export const IntroduceLi = styled.li`
   flex-direction: column;
   row-gap: 1rem;
   margin: 1.8rem 0;
+  /* &:first-of-type {
+    margin-top: 0;
+  } */
 `;
 
 export const IntroduceLink = styled.a`

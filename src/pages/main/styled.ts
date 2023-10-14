@@ -50,6 +50,7 @@ export const MainPageSection = styled.div`
   height: 100%;
   position: relative;
   flex-shrink: 0;
+  overflow-x: hidden;
   overflow-y: auto;
   padding: 6rem 4rem 2rem 2rem;
 `;
@@ -143,11 +144,13 @@ export const NavbarContainer = styled.div<{ opacity?: number }>`
   left: 0;
   width: 100%;
   padding: 2rem;
+  z-index: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: opacity 0.25s;
   opacity: ${({ opacity }) => opacity};
+  backdrop-filter: blur(10px);
 `;
 
 export const NavbarRightIcon = styled(BiRightArrowAlt)<{ opacity?: number }>`
