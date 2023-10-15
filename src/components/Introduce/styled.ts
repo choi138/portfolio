@@ -15,26 +15,7 @@ export const IntroduceSection = styled.section`
   flex-direction: column;
   row-gap: 1rem;
   padding: 1rem;
-  padding-top: 2rem;
-`;
-
-export const IntroduceArticle = styled.article`
-  display: block;
-`;
-
-export const IntroduceUl = styled.ul`
-  margin: 0 1rem;
-  list-style-type: none;
-`;
-
-export const IntroduceLi = styled.li`
-  display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  margin: 1.8rem 0;
-  /* &:first-of-type {
-    margin-top: 0;
-  } */
+  padding-top: 3rem;
 `;
 
 export const IntroduceLink = styled.a`

@@ -4,6 +4,7 @@ import { Text, TextContainer } from '@choi138/react-text';
 
 import { SchoolLogoPng } from 'src/assets';
 import { ABOUT_ME_LIST, PROJECT_LIST } from 'src/constant';
+import { LiStyle, LinkStyle, UlStyle } from 'src/styles';
 
 import * as S from './styled';
 
@@ -22,10 +23,10 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
     title: '이메일',
     content: (
       <>
-        <Text size={0.9} color="#616161" weight={300}>
-          <S.IntroduceLink href="mailto:kidjustinchoi@gmail.com" target="_blank" rel="noreferrer">
+        <Text size={0.9} weight={300}>
+          <LinkStyle href="mailto:kidjustinchoi@gmail.com" target="_blank" rel="noreferrer">
             kidjustinchoi@gmail.com
-          </S.IntroduceLink>
+          </LinkStyle>
         </Text>
       </>
     ),
@@ -38,10 +39,10 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
     title: '학력',
     content: (
       <>
-        <Text size={0.92} color="#5E63C7" weight={400}>
-          <S.IntroduceLink href="https://hansei.sen.hs.kr/" target="_blank" rel="noreferrer">
+        <Text size={0.92} weight={400}>
+          <LinkStyle href="https://hansei.sen.hs.kr/" target="_blank" rel="noreferrer">
             한세사이버보안고등학교 (재학중)
-          </S.IntroduceLink>
+          </LinkStyle>
         </Text>
         <TextContainer columnGap={0.8}>
           <S.IntroduceImage src={SchoolLogoPng} />
@@ -76,9 +77,9 @@ export const Introduce: React.FC = () => {
       </Text>
       <S.IntroduceContainer>
         <S.IntroduceSection>
-          <S.IntroduceUl>
+          <UlStyle>
             {INTRODUCE_LIST.map(({ title, value, content }) => (
-              <S.IntroduceLi key={title}>
+              <LiStyle key={title}>
                 <Text size={1.5} weight={400} color="#424242">
                   {title}
                 </Text>
@@ -89,47 +90,53 @@ export const Introduce: React.FC = () => {
                     {value}
                   </Text>
                 )}
-              </S.IntroduceLi>
+              </LiStyle>
             ))}
-          </S.IntroduceUl>
+          </UlStyle>
         </S.IntroduceSection>
         <S.IntroduceSection>
           {ABOUT_ME_LIST.map(({ title, subTitle, date, description, tag, link }) => (
-            <S.IntroduceUl>
-              <S.IntroduceLi>
-                <Text size={1.7} weight={400}>
-                  {title}
-                </Text>
-                <TextContainer alignItems="center" columnGap={1}>
-                  <Text size={1.5} weight={400} color="#424242">
-                    {subTitle}
-                  </Text>
-                  <Text size={0.9} weight={400} color="#616161">
-                    {date}
-                  </Text>
-                </TextContainer>
-                <TextContainer flexDirection="column" rowGap={0.4}>
-                  {link ? (
-                    <>
-                      <Text size={0.9} color="#616161" weight={300} lineHeight={1.4}>
-                        {description}
-                        <br />
-                        <S.IntroduceLink href={link} target="_blank" rel="noreferrer">
-                          {link}
-                        </S.IntroduceLink>
-                      </Text>
-                    </>
-                  ) : (
-                    <Text size={0.9} color="#616161" weight={300}>
-                      {description}
+            <>
+              <Text size={1.7} weight={400} key={date}>
+                {title}
+              </Text>
+              <UlStyle key={title}>
+                <LiStyle>
+                  <TextContainer alignItems="center" columnGap={1}>
+                    <Text size={1.5} weight={400} color="#424242">
+                      {subTitle}
                     </Text>
-                  )}
-                  <Text size={0.8} color="#9e9e9e" weight={400}>
-                    {tag.map((item) => `#${item} `)}
-                  </Text>
-                </TextContainer>
-              </S.IntroduceLi>
-            </S.IntroduceUl>
+                    <Text size={0.9} weight={400} color="#616161">
+                      {date}
+                    </Text>
+                  </TextContainer>
+                  <TextContainer flexDirection="column" rowGap={0.4}>
+                    {link ? (
+                      <>
+                        <Text size={0.9} color="#616161" weight={300} lineHeight={1.4}>
+                          {description}
+                          <br />
+                          <LinkStyle href={link} target="_blank" rel="noreferrer">
+                            {link}
+                          </LinkStyle>
+                        </Text>
+                      </>
+                    ) : (
+                      <Text size={0.9} color="#616161" weight={300}>
+                        {description}
+                      </Text>
+                    )}
+                    <TextContainer columnGap={0.4}>
+                      {tag.map((item) => (
+                        <Text size={0.8} color="#9e9e9e" weight={400} key={item}>
+                          #{item}
+                        </Text>
+                      ))}
+                    </TextContainer>
+                  </TextContainer>
+                </LiStyle>
+              </UlStyle>
+            </>
           ))}
         </S.IntroduceSection>
       </S.IntroduceContainer>
