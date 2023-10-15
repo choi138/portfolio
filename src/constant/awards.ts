@@ -11,7 +11,7 @@ export const AWARD_LIST: AwardItems[] = [
   //     tag: ['CTF', '한세사이버보안고', 'CTFd'],
   //   },
   {
-    title: '2023년 교내 CTF 대회 (HISCON) 운영',
+    title: '2023년 교내 CTF 대회 운영',
     date: '2023. 09. 27',
     description:
       '2023년 한세사이어보안고등학교의 교내 CTF 대회 (HISCON)을 CTFd를 사용하여 운영 및 총괄을 맡았습니다.',
@@ -32,7 +32,7 @@ export const AWARD_LIST: AwardItems[] = [
     tag: ['CTF', '한세사이버보안고', 'CTFd'],
   },
   {
-    title: '2022년 교내 CTF 대회 (HISCON) 운영',
+    title: '2022년 교내 CTF 대회 운영',
     date: '2022. 09. 27',
     description: '2022년 한세사이어보안고등학교의 교내 CTF 대회 (HISCON)를 운영 하였습니다.',
     tag: ['CTF', 'HISCON', '한세사이버보안고', 'CTFd'],
