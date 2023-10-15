@@ -23,4 +23,11 @@ export const ABOUT_ME_LIST = [
     link: 'https://github.com/choi138',
     tag: ['Github', 'Git', 'Project', 'Repository'],
   },
+  {
+    title: '🪪 자격증',
+    subTitle: '정보처리기능사',
+    date: '2023. 09. 20',
+    description: '정보처리기능사 자격증을 취득하였습니다.',
+    tag: ['정보처리기능사', '자격증'],
+  },
 ];

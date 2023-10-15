@@ -5,19 +5,19 @@ import { Text, TextContainer } from '@choi138/react-text';
 import { LiStyle, LinkStyle, colors } from 'src/styles';
 
 export interface SectionProps {
-  subTitle: string;
+  title: string;
   date: string;
   description: string;
   link?: string;
   tag: string[];
 }
 
-export const Section: React.FC<SectionProps> = ({ subTitle, date, link, description, tag }) => {
+export const Section: React.FC<SectionProps> = ({ title, date, link, description, tag }) => {
   return (
     <LiStyle>
       <TextContainer alignItems="center" columnGap={1}>
         <Text size={1.4} weight={400} color="#424242">
-          {subTitle}
+          {title}
         </Text>
         <Text size={0.9} weight={400} color={colors.darkGray}>
           {date}
@@ -39,7 +39,7 @@ export const Section: React.FC<SectionProps> = ({ subTitle, date, link, descript
             {description}
           </Text>
         )}
-        <TextContainer columnGap={0.4}>
+        <TextContainer columnGap={0.4} style={{ flexWrap: 'wrap' }}>
           {tag.map((item) => (
             <Text size={0.8} color="#9e9e9e" weight={400} key={item}>
               #{item}

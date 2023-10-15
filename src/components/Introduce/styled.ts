@@ -14,6 +14,18 @@ export const IntroduceSection = styled.section`
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  @media screen and (max-width: 1023px) {
+    padding: 0;
+  }
+`;
+
+export const IntroduceTitle = styled.h2`
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 1rem;
+  @media screen and (max-width: 1023px) {
+    margin: 0;
+  }
 `;
 
 export const IntroduceImageContainer = styled.div`

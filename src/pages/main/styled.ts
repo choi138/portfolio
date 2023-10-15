@@ -43,7 +43,8 @@ export const MainPageSection = styled.div`
   flex-shrink: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 6rem 4rem 3rem 3rem;
+  padding: 6rem 4rem 3rem;
+  word-break: break-all;
 `;
 
 export const MainPageBgSection = styled(MainPageSection)`

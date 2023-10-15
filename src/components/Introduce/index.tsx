@@ -74,9 +74,7 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
 export const Introduce: React.FC = () => {
   return (
     <>
-      <Text size={3} weight={400} style={{ margin: '1rem' }}>
-        프로필 소개
-      </Text>
+      <S.IntroduceTitle>프로필 소개</S.IntroduceTitle>
       <S.IntroduceContainer>
         <S.IntroduceSection>
           <UlStyle>
@@ -102,7 +100,7 @@ export const Introduce: React.FC = () => {
               <Title title={title} key={title} />
               <UlStyle key={subTitle}>
                 <Section
-                  subTitle={subTitle}
+                  title={subTitle}
                   date={date}
                   description={description}
                   tag={tag}
