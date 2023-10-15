@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiLeftArrowAlt } from 'react-icons/bi';
 
-import { Introduce, Main, Study } from 'src/components';
+import { Awards, Introduce, Main, Study } from 'src/components';
 import { useHandleSection } from 'src/hooks';
 
 import * as S from './styled';
@@ -21,7 +21,7 @@ export const MainPage: React.FC = () => {
         <Study />
       </S.MainPageSection>
       <S.MainPageSection ref={(el) => (sectionsRef.current[3] = el!)}>
-        This is MainPage 3 section
+        <Awards />
       </S.MainPageSection>
       <S.MainPageSection ref={(el) => (sectionsRef.current[4] = el!)}>
         <S.NavbarContainer opacity={page !== 0 ? 1 : 0}>
