@@ -16,7 +16,7 @@ export const ABOUT_ME_LIST = [
     tag: ['Web', 'React', 'React Native', 'TypeScript', 'JavaScript', 'Pnpm'],
   },
   {
-    title: '📚 레포지토리',
+    title: '📁 레포지토리',
     subTitle: 'Github',
     date: '2021. 05. 18 ~',
     description: '프로젝트들을 진행하며 사용한 기술들을 정리하고 있습니다.',

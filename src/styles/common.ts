@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { colors } from './colors';
+
 export const UlStyle = styled.ul`
   margin: 0 1rem;
   list-style-type: none;
@@ -17,8 +19,8 @@ export const LiStyle = styled.li`
 
 export const LinkStyle = styled.a`
   text-decoration: none;
-  color: #5e63c7;
-  background-image: linear-gradient(90deg, #5e63c7, #5e63c7);
+  color: ${colors.primary};
+  background-image: linear-gradient(90deg, ${colors.primary}, ${colors.primary});
   background-repeat: no-repeat;
   background-position: 0 100%; // 위, 아래
   background-size: 0 0.0625em; // 가로, 세로

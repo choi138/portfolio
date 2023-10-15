@@ -4,9 +4,9 @@ import { Text, TextContainer } from '@choi138/react-text';
 
 import { SchoolLogoPng } from 'src/assets';
 import { ABOUT_ME_LIST, PROJECT_LIST } from 'src/constant';
-import { LiStyle, LinkStyle, UlStyle } from 'src/styles';
+import { LinkStyle, UlStyle, colors } from 'src/styles';
 
-import { Section } from '../common';
+import { Section, Title } from '../common';
 
 import * as S from './styled';
 
@@ -48,7 +48,7 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
         </Text>
         <TextContainer columnGap={0.8}>
           <S.IntroduceImage src={SchoolLogoPng} />
-          <Text size={0.82} color="#616161" weight={400}>
+          <Text size={0.82} color={colors.darkGray} weight={400}>
             2022.03 ~
           </Text>
         </TextContainer>
@@ -74,35 +74,33 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
 export const Introduce: React.FC = () => {
   return (
     <>
-      <Text size={3} weight={700} style={{ margin: '1rem' }}>
+      <Text size={3} weight={400} style={{ margin: '1rem' }}>
         프로필 소개
       </Text>
       <S.IntroduceContainer>
         <S.IntroduceSection>
           <UlStyle>
             {INTRODUCE_LIST.map(({ title, value, content }) => (
-              <LiStyle key={title}>
+              <S.IntroduceLi key={title}>
                 <Text size={1.5} weight={400} color="#424242">
                   {title}
                 </Text>
                 {content ? (
                   content
                 ) : (
-                  <Text size={0.9} color="#616161" weight={300}>
+                  <Text size={0.9} color={colors.darkGray} weight={300}>
                     {value}
                   </Text>
                 )}
-              </LiStyle>
+              </S.IntroduceLi>
             ))}
           </UlStyle>
         </S.IntroduceSection>
         <S.IntroduceSection>
           {ABOUT_ME_LIST.map(({ title, subTitle, date, description, tag, link }) => (
-            <>
-              <Text size={1.7} weight={400} key={date}>
-                {title}
-              </Text>
-              <UlStyle key={title}>
+            <article>
+              <Title title={title} key={title} />
+              <UlStyle key={subTitle}>
                 <Section
                   subTitle={subTitle}
                   date={date}
@@ -111,7 +109,7 @@ export const Introduce: React.FC = () => {
                   link={link}
                 />
               </UlStyle>
-            </>
+            </article>
           ))}
         </S.IntroduceSection>
       </S.IntroduceContainer>

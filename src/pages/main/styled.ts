@@ -36,15 +36,6 @@ const translate = keyframes`
 }
 `;
 
-export const MainpageSectionContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-shrink: 0;
-  overflow-x: hidden;
-`;
-
 export const MainPageSection = styled.div`
   width: 100%;
   height: 100%;
@@ -52,7 +43,7 @@ export const MainPageSection = styled.div`
   flex-shrink: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 6rem 4rem 2rem 2rem;
+  padding: 6rem 4rem 3rem 3rem;
 `;
 
 export const MainPageBgSection = styled(MainPageSection)`

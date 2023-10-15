@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Text, TextContainer } from '@choi138/react-text';
 
-import { LiStyle, LinkStyle } from 'src/styles';
+import { LiStyle, LinkStyle, colors } from 'src/styles';
 
 export interface SectionProps {
   subTitle: string;
@@ -16,17 +16,17 @@ export const Section: React.FC<SectionProps> = ({ subTitle, date, link, descript
   return (
     <LiStyle>
       <TextContainer alignItems="center" columnGap={1}>
-        <Text size={1.5} weight={400} color="#424242">
+        <Text size={1.4} weight={400} color="#424242">
           {subTitle}
         </Text>
-        <Text size={0.9} weight={400} color="#616161">
+        <Text size={0.9} weight={400} color={colors.darkGray}>
           {date}
         </Text>
       </TextContainer>
       <TextContainer flexDirection="column" rowGap={0.4}>
         {link ? (
           <>
-            <Text size={0.9} color="#616161" weight={300} lineHeight={1.4}>
+            <Text size={0.9} color={colors.darkGray} weight={300} lineHeight={1.4}>
               {description}
               <br />
               <LinkStyle href={link} target="_blank" rel="noreferrer">
@@ -35,7 +35,7 @@ export const Section: React.FC<SectionProps> = ({ subTitle, date, link, descript
             </Text>
           </>
         ) : (
-          <Text size={0.9} color="#616161" weight={300}>
+          <Text size={0.9} color={colors.darkGray} weight={300}>
             {description}
           </Text>
         )}
