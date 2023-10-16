@@ -10,17 +10,15 @@ export const MainPage: React.FC = () => {
   const { page, sectionsRef, handleNext, handlePrev } = useHandleSection();
 
   useEffect(() => {
-    const focusSection = () => {
-      sectionsRef.current[page].focus();
-      console.log('focus', sectionsRef.current[page]);
-    };
+    window.addEventListener('resize', () => {
+      window.location.reload();
+    });
 
-    window.addEventListener('resize', focusSection);
-
-    return () => {
-      window.removeEventListener('resize', focusSection);
-    };
-  });
+    return () =>
+      window.removeEventListener('resize', () => {
+        window.location.reload();
+      });
+  }, []);
 
   return (
     <>

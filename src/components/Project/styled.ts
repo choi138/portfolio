@@ -8,6 +8,12 @@ export const ProjectSection = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0 2rem;
   grid-auto-rows: min-content;
+  @media screen and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 599px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ProjectBox = styled.div`

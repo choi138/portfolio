@@ -26,8 +26,8 @@ export const ModalContainer = styled.div`
   z-index: 9999;
   top: 50%;
   left: 50%;
-  width: 44rem;
-  height: 34rem;
+  width: 50%;
+  height: 50%;
   overflow: auto;
   transform: translate(-50%, -50%);
   background-color: ${colors.white};
