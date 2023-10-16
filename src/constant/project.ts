@@ -1,7 +1,11 @@
 import { NEXT_JS, PNPM, REACT_JS, REACT_NATIVE, RECOIL, TYPESCRIPT } from './skillName';
 import { StudyItems } from './study';
 
-export interface ProjectItems extends StudyItems {}
+export interface ProjectItems extends StudyItems {
+  bgImg?: string;
+  images?: string[];
+  doing?: string[];
+}
 
 export const PROJECT_LIST: ProjectItems[] = [
   {
@@ -32,7 +36,7 @@ export const PROJECT_LIST: ProjectItems[] = [
   {
     title: '한북',
     date: '2023.04.17 ~ 2023.06.26 (이후 유지보수)',
-    description: '한세고의 동아리 책 관리 사이트',
+    description: '한세고의 동아리 책 관리 웹 사이트',
     tag: [TYPESCRIPT, REACT_JS, 'Framer-Motion', 'React-Lottie', 'Vite'],
   },
   {
@@ -44,13 +48,13 @@ export const PROJECT_LIST: ProjectItems[] = [
   {
     title: '보안관제 동아리 모집 사이트',
     date: '2023.02.11 ~ 2023.03.05 (이후 유지보수)',
-    description: '2023년 보안관제 동아리 모집을 위한 홈페이지',
+    description: '2023년 보안관제 동아리 신입부원 모집과 소개 홈페이지',
     tag: [TYPESCRIPT, NEXT_JS, 'React-Hook-Form', 'Prisma', 'MySQL'],
   },
   {
     title: 'FMCC',
-    date: '2023.02.11 ~ 2023.03.05 (이후 유지보수)',
-    description: '영화 기본 정보와 예고편을 볼 수 있는 사이트',
+    date: '2022.12.14 ~ 2023.02.09',
+    description: '영화 기본 정보와 예고편을 볼 수 있는 웹 사이트',
     tag: [TYPESCRIPT, REACT_JS, 'React-Query', RECOIL],
   },
 ];

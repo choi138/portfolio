@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Text } from '@choi138/react-text';
 
 import { PROJECT_LIST } from 'src/constant/project';
 
-import { Tag, Title } from '../common';
+import { Modal, Tag, Title } from '../common';
 
 import * as S from './styled';
 
 export const Project: React.FC = () => {
+  const [modal, setModal] = useState(false);
+
+  const onModalOpen = () => {
+    setModal(true);
+  };
   return (
     <>
       <Title title="🗂️ 지난 프로젝트" subTitle="지금까지 이런걸 해왔어요" />
       <S.ProjectSection>
         {PROJECT_LIST.map(({ title, date, description, tag }) => (
-          <S.ProjectBox>
+          <S.ProjectBox onClick={onModalOpen}>
             <Text size={0.8} weight={400} color="#9e9e9e">
               {date}
             </Text>
@@ -28,6 +33,7 @@ export const Project: React.FC = () => {
           </S.ProjectBox>
         ))}
       </S.ProjectSection>
+      {modal && <Modal />}
     </>
   );
 };

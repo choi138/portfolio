@@ -21,7 +21,7 @@ export const ProjectBox = styled.div`
   transition: border 0.4s ease;
   &:hover {
     border: 1px solid ${colors.primary};
-    & > :first-child {
+    & > :first-of-type {
       color: ${colors.primary};
     }
   }
