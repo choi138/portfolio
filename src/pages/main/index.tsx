@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BiLeftArrowAlt } from 'react-icons/bi';
 
-import { Awards, Introduce, Main, Study } from 'src/components';
+import { Awards, Introduce, Main, Project, Study } from 'src/components';
 import { useHandleSection } from 'src/hooks';
 
 import * as S from './styled';
 
 export const MainPage: React.FC = () => {
   const { page, sectionsRef, handleNext, handlePrev } = useHandleSection();
+
+  useEffect(() => {
+    const focusSection = () => {
+      sectionsRef.current[page].focus();
+      console.log('focus', sectionsRef.current[page]);
+    };
+
+    window.addEventListener('resize', focusSection);
+
+    return () => {
+      window.removeEventListener('resize', focusSection);
+    };
+  });
 
   return (
     <>
@@ -28,7 +41,7 @@ export const MainPage: React.FC = () => {
           <BiLeftArrowAlt size={30} onClick={handlePrev} />
           <S.NavbarRightIcon size={30} onClick={handleNext} opacity={page === 4 ? 0 : 1} />
         </S.NavbarContainer>
-        This is MainPage 4 section
+        <Project />
       </S.MainPageSection>
     </>
   );

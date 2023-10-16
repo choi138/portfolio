@@ -142,7 +142,9 @@ export const NavbarContainer = styled.div<{ opacity?: number }>`
   align-items: center;
   transition: opacity 0.25s;
   opacity: ${({ opacity }) => opacity};
-  backdrop-filter: blur(10px);
+  @media screen and (max-width: 1023px) {
+    backdrop-filter: blur(10px);
+  }
 `;
 
 export const NavbarRightIcon = styled(BiRightArrowAlt)<{ opacity?: number }>`

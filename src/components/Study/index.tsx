@@ -14,12 +14,12 @@ export const Study: React.FC = () => {
       <S.StudyWrapper>
         <UlStyle>
           {STUDY_LIST.slice(0, 4).map(({ title, date, description, tag }) => (
-            <Section title={title} date={date} description={description} tag={tag} />
+            <Section key={title} title={title} date={date} description={description} tag={tag} />
           ))}
         </UlStyle>
         <UlStyle>
           {STUDY_LIST.slice(4).map(({ title, date, description, tag }) => (
-            <Section title={title} date={date} description={description} tag={tag} />
+            <Section key={title} title={title} date={date} description={description} tag={tag} />
           ))}
         </UlStyle>
       </S.StudyWrapper>

@@ -14,12 +14,12 @@ export const Awards: React.FC = () => {
       <S.StudyWrapper>
         <UlStyle>
           {AWARD_LIST.slice(0, 3).map(({ title, date, description, tag }) => (
-            <Section title={title} date={date} description={description} tag={tag} />
+            <Section key={title} title={title} date={date} description={description} tag={tag} />
           ))}
         </UlStyle>
         <UlStyle>
           {AWARD_LIST.slice(3).map(({ title, date, description, tag }) => (
-            <Section title={title} date={date} description={description} tag={tag} />
+            <Section key={title} title={title} date={date} description={description} tag={tag} />
           ))}
         </UlStyle>
       </S.StudyWrapper>

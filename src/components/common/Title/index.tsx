@@ -16,7 +16,7 @@ export const Title: React.FC<TitleProps> = ({ title, subTitle }) => {
       {subTitle && (
         <>
           <br />
-          <Text size={1} style={{ marginTop: '1rem' }} color={colors.darkGray} weight={400}>
+          <Text size={0.94} style={{ marginTop: '0.8rem' }} color={colors.darkGray} weight={300}>
             {subTitle}
           </Text>
         </>
