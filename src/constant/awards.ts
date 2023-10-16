@@ -1,3 +1,4 @@
+import { REACT_JS, TYPESCRIPT } from './skillName';
 import { StudyItems } from './study';
 
 export interface AwardItems extends StudyItems {}
@@ -22,7 +23,7 @@ export const AWARD_LIST: AwardItems[] = [
     date: '2023. 07. 20',
     description:
       '제6회 한세톤(한세고 + 해커톤)에서 우리, 함께라는 프로젝트 프론트를 1인 개발 하였고, 2등을 수상하였습니다.',
-    tag: ['한세톤', '한세고', 'Web', 'React.js', 'TypeScript'],
+    tag: ['한세톤', '한세고', 'Web', REACT_JS, TYPESCRIPT],
   },
   {
     title: '2022년 중학생 정보보안 콘테스트 운영',

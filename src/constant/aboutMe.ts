@@ -1,3 +1,5 @@
+import { PNPM, REACT_JS, REACT_NATIVE, TYPESCRIPT } from './skillName';
+
 export interface AboutMeItems {
   title: string;
   subTitle: string;
@@ -12,8 +14,8 @@ export const ABOUT_ME_LIST = [
     title: '⭐️ 기술 스택',
     subTitle: 'Frontend 개발자',
     date: '2021. 08 ~',
-    description: '타입스크립트와 React, React Native를 사용한 웹, 앱 개발을 하고 있습니다.',
-    tag: ['Web', 'React', 'React Native', 'TypeScript', 'Pnpm'],
+    description: `${TYPESCRIPT}와 ${REACT_JS}, ${REACT_NATIVE}를 사용한 웹, 앱 개발을 하고 있습니다.`,
+    tag: ['Web', REACT_JS, REACT_NATIVE, TYPESCRIPT, PNPM],
   },
   {
     title: '📁 레포지토리',

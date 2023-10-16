@@ -17,7 +17,7 @@ export interface SectionProps {
 export const Section: React.FC<SectionProps> = ({ title, date, link, description, tag }) => {
   return (
     <LiStyle>
-      <TextContainer alignItems="center" columnGap={1}>
+      <TextContainer alignItems="center" columnGap={1} style={{ flexWrap: 'wrap' }}>
         <Text size={1.4} weight={400} color="#424242">
           {title}
         </Text>

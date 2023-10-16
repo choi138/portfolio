@@ -2,14 +2,8 @@ import styled from '@emotion/styled';
 
 import { colors } from 'src/styles';
 
-export const ProjectContainer = styled.div`
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2rem;
-`;
-
 export const ProjectSection = styled.div`
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0 2rem;
@@ -17,6 +11,7 @@ export const ProjectSection = styled.div`
 `;
 
 export const ProjectBox = styled.div`
+  margin: 1rem 0;
   padding: 1.2rem;
   display: flex;
   flex-direction: column;
