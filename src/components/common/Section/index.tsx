@@ -4,6 +4,8 @@ import { Text, TextContainer } from '@choi138/react-text';
 
 import { LiStyle, LinkStyle, colors } from 'src/styles';
 
+import { Tag } from '../Tag';
+
 export interface SectionProps {
   title: string;
   date: string;
@@ -39,13 +41,7 @@ export const Section: React.FC<SectionProps> = ({ title, date, link, description
             {description}
           </Text>
         )}
-        <TextContainer columnGap={0.4} style={{ flexWrap: 'wrap' }}>
-          {tag.map((item) => (
-            <Text size={0.8} color="#9e9e9e" weight={400} key={item}>
-              #{item}
-            </Text>
-          ))}
-        </TextContainer>
+        <Tag tagList={tag} />
       </TextContainer>
     </LiStyle>
   );

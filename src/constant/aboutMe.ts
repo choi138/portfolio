@@ -13,7 +13,7 @@ export const ABOUT_ME_LIST = [
     subTitle: 'Frontend 개발자',
     date: '2021. 08 ~',
     description: '타입스크립트와 React, React Native를 사용한 웹, 앱 개발을 하고 있습니다.',
-    tag: ['Web', 'React', 'React Native', 'TypeScript', 'JavaScript', 'Pnpm'],
+    tag: ['Web', 'React', 'React Native', 'TypeScript', 'Pnpm'],
   },
   {
     title: '📁 레포지토리',
