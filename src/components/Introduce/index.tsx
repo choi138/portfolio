@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, TextContainer } from '@choi138/react-text';
 
 import { SchoolLogoPng } from 'src/assets';
-import { ABOUT_ME_LIST, PROJECT_LIST } from 'src/constant';
+import { ABOUT_ME_LIST, ACTIVITY_LIST } from 'src/constant';
 import { LinkStyle, UlStyle, colors } from 'src/styles';
 
 import { Section, Title } from '../common';
@@ -60,7 +60,7 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
     content: (
       <>
         <S.IntroduceImageContainer>
-          {PROJECT_LIST.map(({ image, href }) => (
+          {ACTIVITY_LIST.map(({ image, href }) => (
             <a href={href} target="_blank" rel="noreferrer" key={href} title="Project-image">
               <S.IntroduceProjectImage src={image} />
             </a>

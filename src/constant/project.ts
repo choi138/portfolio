@@ -1,35 +1,26 @@
-import {
-  HanbookLogoPng,
-  HanowwlLogoPng,
-  HanumLogoPng,
-  HsocLogoPng,
-  WeTogetherLogoPng,
-} from 'src/assets';
+import { StudyItems } from './study';
 
-export interface PorjectItems {
-  image: string;
-  href: string;
+export interface ProjectItems {
+  projectTitle: string;
+  project: StudyItems[];
 }
 
-export const PROJECT_LIST: PorjectItems[] = [
+export const PROJECT_LIST: ProjectItems[] = [
   {
-    image: HsocLogoPng,
-    href: 'https://github.com/hansei-hsoc',
-  },
-  {
-    image: HanowwlLogoPng,
-    href: 'https://github.com/hanowwl',
-  },
-  {
-    image: HanbookLogoPng,
-    href: 'https://github.com/hansei-book-management',
-  },
-  {
-    image: WeTogetherLogoPng,
-    href: 'https://github.com/hanseithonkk',
-  },
-  {
-    image: HanumLogoPng,
-    href: 'https://github.com/hansei-hanum',
+    projectTitle: '학생회 한울',
+    project: [
+      {
+        title: '한움',
+        date: '2023.09.02 ~ ',
+        description: '한세고의 모든 정보를 알려주는 한세고 도우미 앱, 한움',
+        tag: ['React Native', 'React', 'TypeScript', 'React-Query', 'Yarn'],
+      },
+      {
+        title: '학생회 신입부원 모집 사이트',
+        date: '2023.03.03 ~ 2023.03.20',
+        description: '2023년 학생회 신입부원 모집을 위한 홈페이지',
+        tag: ['React.js', 'TypeScript'],
+      },
+    ],
   },
 ];
