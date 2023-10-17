@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Text } from '@choi138/react-text';
 import { AnimatePresence } from 'framer-motion';
@@ -12,6 +12,7 @@ import * as S from './styled';
 
 export const Project: React.FC = () => {
   const { modalState, openModal } = useModal();
+
   return (
     <>
       <Title title="🗂️ 지난 프로젝트" subTitle="지금까지 이런걸 해왔어요" />
@@ -31,7 +32,7 @@ export const Project: React.FC = () => {
           </S.ProjectBox>
         ))}
       </S.ProjectSection>
-      <AnimatePresence>{modalState && <Modal />}</AnimatePresence>
+      <AnimatePresence>{modalState.isOpen && <Modal />}</AnimatePresence>
     </>
   );
 };

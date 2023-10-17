@@ -3,7 +3,7 @@ import React from 'react';
 import { Text } from '@choi138/react-text';
 
 import { useModal } from 'src/hooks';
-import { Hanbook1Png, HanumModalSvg } from 'src/assets';
+import { Fmcc1Svg } from 'src/assets';
 
 import * as S from './styled';
 
@@ -25,7 +25,7 @@ export const Modal: React.FC = () => {
     >
       <S.DummyModal onClick={closeModal} />
       <S.ModalContainer>
-        <S.ModalImage src={Hanbook1Png} />
+        <S.ModalImage src={Fmcc1Svg} />
         <Text size={1.5} weight={400}>
           📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
           <br />

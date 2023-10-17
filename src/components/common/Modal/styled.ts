@@ -43,6 +43,6 @@ export const ModalContainer = styled.div`
 
 export const ModalImage = styled.img`
   width: 100%;
-  height: 45%;
+  height: auto;
   border-bottom: 1px solid ${colors.softWhite};
 `;

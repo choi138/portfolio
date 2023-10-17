@@ -1,16 +1,16 @@
 import { useRecoilState } from 'recoil';
 
-import { ModalState } from 'src/atoms/modal';
+import { ModalAtom } from 'src/atoms/modal';
 
 export const useModal = () => {
-  const [modalState, setModalState] = useRecoilState(ModalState);
+  const [modalState, setModalState] = useRecoilState(ModalAtom);
 
   const openModal = () => {
-    setModalState(true);
+    setModalState({ isOpen: true });
   };
 
   const closeModal = () => {
-    setModalState(false);
+    setModalState({ isOpen: false });
   };
 
   return { modalState, openModal, closeModal };

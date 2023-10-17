@@ -1,3 +1,3 @@
-export { default as HanumBooth1Png } from './hanumBooth1.png';
-export { default as HanumBooth2Png } from './hanumBooth2.png';
-export { default as HanumBooth3Png } from './hanumBooth3.png';
+export { default as HanumBooth1Svg } from './hanumBooth1.svg';
+export { default as HanumBooth2Svg } from './hanumBooth2.svg';
+export { default as HanumBooth3Svg } from './hanumBooth3.svg';

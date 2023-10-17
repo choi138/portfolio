@@ -1,5 +1,5 @@
-export { default as Fmcc1Png } from './fmcc1.png';
-export { default as Fmcc2Png } from './fmcc2.png';
-export { default as Fmcc3Png } from './fmcc3.png';
-export { default as Fmcc4Png } from './fmcc4.png';
-export { default as FmccModalPng } from './fmcc-modal.png';
+export { default as Fmcc1Svg } from './fmcc1.svg';
+export { default as Fmcc2Svg } from './fmcc2.svg';
+export { default as Fmcc3Svg } from './fmcc3.svg';
+export { default as Fmcc4Svg } from './fmcc4.svg';
+export { default as Fmcc5Svg } from './fmcc5.svg';
