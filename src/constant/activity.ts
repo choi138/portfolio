@@ -1,9 +1,9 @@
 import {
-  HanbookLogoPng,
+  HanbookLogoWebp,
   HanowlLogoWebp,
   HanumLogoPng,
   HsocLogoPng,
-  WeTogetherLogoSvg,
+  WeTogetherLogoWebp,
 } from 'src/assets';
 
 export interface ActivityItems {
@@ -21,11 +21,11 @@ export const ACTIVITY_LIST: ActivityItems[] = [
     href: 'https://github.com/hanowwl',
   },
   {
-    image: HanbookLogoPng,
+    image: HanbookLogoWebp,
     href: 'https://github.com/hansei-book-management',
   },
   {
-    image: WeTogetherLogoSvg,
+    image: WeTogetherLogoWebp,
     href: 'https://github.com/hanseithonkk',
   },
   {
