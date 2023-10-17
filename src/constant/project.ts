@@ -12,7 +12,7 @@ export interface ProjectItems extends StudyItems {
 
 export const PROJECT_LIST: ProjectItems[] = [
   {
-    title: '한움',
+    title: '한움 (진행 중)',
     date: '2023.09.02 ~ ',
     description: '한세고의 모든 정보를 알려주는 한세고 도우미 앱, 한움',
     tag: [TYPESCRIPT, REACT_NATIVE, REACT_JS, 'React-Native-Qrcode-Scanner', 'Yarn'],

@@ -19,8 +19,8 @@ export const STUDY_LIST: StudyItems[] = [
   {
     title: NESTJS,
     date: '2022. 12 ~',
-    description: `${NODE_JS}에서 구조화된 백엔드를 사용하고 싶어서 ${NESTJS}를 공부하였습니다.`,
-    tag: [NESTJS, NODE_JS, 'Express.js', TYPESCRIPT, 'TypeOrm'],
+    description: `${NODE_JS}에서 구조화된 백엔드를 사용하고 싶어서 ${NESTJS}를 공부하였습니다. NestJs, GraphQL, MySQL, JWT 인증을 사용하여 우버이츠 백엔드 클론 코딩을 하였습니다. `,
+    tag: [NESTJS, NODE_JS, 'Express.js', TYPESCRIPT, 'TypeOrm', 'GraphQL', 'JWT', 'MySQL'],
   },
   {
     title: NODE_JS,

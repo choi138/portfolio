@@ -21,9 +21,11 @@
     "@choi138/react-text": "^1.0.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@types/node": "^20.8.2",

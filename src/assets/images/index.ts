@@ -6,3 +6,4 @@ export { default as HanowwlLogoPng } from './hanowwl-logo.jpeg';
 export { default as HanbookLogoPng } from './hanbook-logo.png';
 export { default as WeTogetherLogoPng } from './weTogether-logo.png';
 export { default as HanumLogoPng } from './hanum-logo.png';
+export { default as HanumModalSvg } from './hanum-modal.svg';

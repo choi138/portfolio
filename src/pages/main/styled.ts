@@ -36,13 +36,13 @@ const translate = keyframes`
 }
 `;
 
-export const MainPageSection = styled.div`
+export const MainPageSection = styled.div<{ isHidden?: boolean }>`
   width: 100%;
   height: 100%;
   position: relative;
   flex-shrink: 0;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: ${({ isHidden }) => (isHidden ? 'hidden' : 'auto')};
   padding: 6rem 4rem 3rem;
   word-break: break-all;
 `;
