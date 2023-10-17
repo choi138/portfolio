@@ -57,6 +57,10 @@ export const ModalSection = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 0.6rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ktml-user-select: none;
 `;
 
 export const ModalUl = styled.ul`
@@ -81,14 +85,26 @@ export const ModalImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 2rem;
+`;
+
+export const ModalImageLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ModalImage = styled.img`
   width: auto;
-  max-width: 80%;
+  max-width: 96%;
   height: auto;
   max-height: 40rem;
   border-radius: 10px;
   border: 1px solid ${colors.softWhite};
+`;
+
+export const ModalLinkContainer = styled.div`
+  display: flex;
+  align-items: center;
+  column-gap: 0.6rem;
 `;

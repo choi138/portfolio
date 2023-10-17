@@ -5,7 +5,7 @@ import { StudyItems } from './study';
 
 export interface ProjectItems extends StudyItems {
   modalImg?: string;
-  images?: string[];
+  images: string[];
   video?: string;
   link?: string;
   github: string;

@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BsChevronLeft, BsChevronRight, BsGithub } from 'react-icons/bs';
+import { BiLogoPlayStore } from 'react-icons/bi';
+import { FiExternalLink } from 'react-icons/fi';
+import { FaAppStoreIos } from 'react-icons/fa';
 
 import { Text, TextContainer } from '@choi138/react-text';
 
@@ -13,9 +17,28 @@ export interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const handlePrevClick = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 && modal.images ? modal.images.length - 1 : prevIndex - 1,
+    );
+  };
+
+  const handleNextClick = () => {
+    setCurrentImageIndex((prevIndex) =>
+      modal.images && prevIndex === modal.images.length - 1 ? 0 : prevIndex + 1,
+    );
+  };
+
   const variants = {
     open: { opacity: 1 },
     closed: { opacity: 0 },
+  };
+
+  const linkSettings = {
+    target: '_blank',
+    rel: 'noreferrer',
   };
 
   return (
@@ -42,10 +65,26 @@ export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
               <Text size={1.5} weight={600}>
                 {modal.title}
               </Text>
-              <div>
-                <Text size={0.8}>{modal.github}</Text>
-                <Text size={0.8}>{modal.link ? 'git' : 'site'}</Text>
-              </div>
+              <S.ModalLinkContainer>
+                <a href={modal.github} {...linkSettings} title="git">
+                  <BsGithub size={'2rem'} color={colors.black} />
+                </a>
+                {modal.link && (
+                  <a href={modal.link} {...linkSettings} title="link">
+                    <FiExternalLink size={'2rem'} color={colors.black} />
+                  </a>
+                )}
+                {modal.appStore && (
+                  <a href={modal.appStore} {...linkSettings} title="app">
+                    <FaAppStoreIos size={'2.1rem'} color={colors.black} />
+                  </a>
+                )}
+                {modal.playStore && (
+                  <a href={modal.playStore} {...linkSettings} title="play">
+                    <BiLogoPlayStore size={'2.3rem'} color={colors.black} />
+                  </a>
+                )}
+              </S.ModalLinkContainer>
             </TextContainer>
             <Text size={1} weight={400} color={colors.gray}>
               {modal.description}
@@ -72,7 +111,26 @@ export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
         </S.ModalSectionContainer>
         <S.ModalSection>
           <S.ModalImageContainer>
-            <S.ModalImage src={modal.images && modal.images[0]} />
+            {modal.images?.length !== 1 ? (
+              <>
+                <BsChevronLeft size={32} onClick={handlePrevClick}>
+                  Prev
+                </BsChevronLeft>
+                <S.ModalImageLink
+                  href={modal.images && modal.images[currentImageIndex]}
+                  {...linkSettings}
+                >
+                  <S.ModalImage src={modal.images && modal.images[currentImageIndex]} />
+                </S.ModalImageLink>
+                <BsChevronRight size={32} onClick={handleNextClick}>
+                  Next
+                </BsChevronRight>
+              </>
+            ) : (
+              <S.ModalImageLink href={modal.images[0]} {...linkSettings}>
+                <S.ModalImage src={modal.images[0]} />
+              </S.ModalImageLink>
+            )}
           </S.ModalImageContainer>
         </S.ModalSection>
       </S.ModalContainer>
