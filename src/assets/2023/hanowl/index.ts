@@ -1,6 +1,6 @@
-export { default as Hanowl1Svg } from './hanowl1.svg';
-export { default as Hanowl2Svg } from './hanowl2.svg';
-export { default as Hanowl3Svg } from './hanowl3.svg';
-export { default as Hanowl4Svg } from './hanowl4.svg';
-export { default as Hanowl5Svg } from './hanowl5.svg';
-export { default as HanowlLogoSvg } from './hanowl-logo.svg';
+export { default as Hanowl1Webp } from './hanowl1.webp';
+export { default as Hanowl2Webp } from './hanowl2.webp';
+export { default as Hanowl3Webp } from './hanowl3.webp';
+export { default as Hanowl4Webp } from './hanowl4.webp';
+export { default as Hanowl5Webp } from './hanowl5.webp';
+export { default as HanowlLogoWebp } from './hanowl-logo.webp';

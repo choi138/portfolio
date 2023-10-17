@@ -1,15 +1,18 @@
 import React from 'react';
 
-import { Text } from '@choi138/react-text';
+import { Text, TextContainer } from '@choi138/react-text';
 
-import { useModal } from 'src/hooks';
-import { Fmcc1Svg } from 'src/assets';
+import { ModalStateProps } from 'src/components/Project';
+import { colors } from 'src/styles';
 
 import * as S from './styled';
 
-export const Modal: React.FC = () => {
-  const { modalState, closeModal } = useModal();
+export interface ModalProps {
+  setModal: React.Dispatch<React.SetStateAction<ModalStateProps>>;
+  modal: ModalStateProps;
+}
 
+export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
   const variants = {
     open: { opacity: 1 },
     closed: { opacity: 0 },
@@ -17,41 +20,61 @@ export const Modal: React.FC = () => {
 
   return (
     <S.ModalWrapper
-      animate={modalState ? 'open' : 'closed'}
+      animate={modal.isOpen ? 'open' : 'closed'}
       variants={variants}
       transition={{ duration: 0.12 }}
       initial={{ opacity: 0 }}
       exit={{ opacity: 0 }}
     >
-      <S.DummyModal onClick={closeModal} />
+      <S.DummyModal
+        onClick={() => {
+          setModal({ isOpen: false });
+        }}
+      />
       <S.ModalContainer>
-        <S.ModalImage src={Fmcc1Svg} />
-        <Text size={1.5} weight={400}>
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝
-          이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝
-          이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-          <br />
-          📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf 📝
-          이력서sadfsadfsafsafdsafdasfdsafdsaf 📝 이력서sadfsadfsafsafdsafdasfdsafdsaf
-        </Text>
+        <S.ModalMainImage src={modal.modalImg} />
+        <S.ModalSectionContainer>
+          <S.ModalSection>
+            <Text size={0.9} weight={400} color={colors.gray}>
+              {modal.date}
+            </Text>
+            <TextContainer justifyContent="space-between" alignItems="center">
+              <Text size={1.5} weight={600}>
+                {modal.title}
+              </Text>
+              <div>
+                <Text size={0.8}>{modal.github}</Text>
+                <Text size={0.8}>{modal.link ? 'git' : 'site'}</Text>
+              </div>
+            </TextContainer>
+            <Text size={1} weight={400} color={colors.gray}>
+              {modal.description}
+            </Text>
+          </S.ModalSection>
+          <S.ModalSection>
+            <Text size={1.4} weight={600}>
+              사용 기술
+            </Text>
+            <TextContainer columnGap={0.4}>
+              <Text size={1} weight={400}>
+                {modal.tag?.join(', ')}
+              </Text>
+            </TextContainer>
+          </S.ModalSection>
+          <S.ModalSection>
+            <Text size={1.4} weight={600}>
+              이런걸 했어요
+            </Text>
+            <S.ModalUl>
+              {modal.doing?.map((item) => <S.ModalLi key={item}>{item}</S.ModalLi>)}
+            </S.ModalUl>
+          </S.ModalSection>
+        </S.ModalSectionContainer>
+        <S.ModalSection>
+          <S.ModalImageContainer>
+            <S.ModalImage src={modal.images && modal.images[0]} />
+          </S.ModalImageContainer>
+        </S.ModalSection>
       </S.ModalContainer>
     </S.ModalWrapper>
   );

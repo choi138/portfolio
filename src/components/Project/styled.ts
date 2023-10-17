@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { colors } from 'src/styles';
 
 export const ProjectSection = styled.div`
+  overflow: hidden;
   margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

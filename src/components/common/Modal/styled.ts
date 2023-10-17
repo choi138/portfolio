@@ -35,14 +35,60 @@ export const ModalContainer = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
   @media screen and (max-width: 500px) {
     width: 90%;
   }
 `;
 
-export const ModalImage = styled.img`
+export const ModalMainImage = styled.img`
   width: 100%;
   height: auto;
-  border-bottom: 1px solid ${colors.softWhite};
+  border-bottom: 0.2px solid ${colors.darkGray};
+`;
+
+export const ModalSectionContainer = styled.div`
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+`;
+
+export const ModalSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+`;
+
+export const ModalUl = styled.ul`
+  list-style: disc;
+  padding-left: 1rem;
+  & > li:first-of-type {
+    margin-top: 0.6rem;
+  }
+  & > li:last-of-type {
+    margin-bottom: 0;
+  }
+`;
+
+export const ModalLi = styled.li`
+  font-size: 1rem;
+  display: list-item;
+  margin-bottom: 0.8rem;
+`;
+
+export const ModalImageContainer = styled.div`
+  border-top: 0.2px solid ${colors.darkGray};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+`;
+
+export const ModalImage = styled.img`
+  width: auto;
+  max-width: 80%;
+  height: auto;
+  max-height: 40rem;
+  border-radius: 10px;
+  border: 1px solid ${colors.softWhite};
 `;

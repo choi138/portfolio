@@ -1,38 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Text } from '@choi138/react-text';
 import { AnimatePresence } from 'framer-motion';
 
-import { PROJECT_LIST } from 'src/constant/project';
-import { useModal } from 'src/hooks';
+import { PROJECT_LIST, ProjectItems } from 'src/constant';
 
 import { Modal, Tag, Title } from '../common';
 
 import * as S from './styled';
 
+export type ModalStateProps = Partial<ProjectItems> & {
+  isOpen: boolean;
+};
+
 export const Project: React.FC = () => {
-  const { modalState, openModal } = useModal();
+  const [modal, setModal] = useState<ModalStateProps>({ isOpen: false });
 
   return (
     <>
       <Title title="🗂️ 지난 프로젝트" subTitle="지금까지 이런걸 해왔어요" />
       <S.ProjectSection>
-        {PROJECT_LIST.map(({ title, date, description, tag }) => (
-          <S.ProjectBox onClick={openModal}>
+        {PROJECT_LIST.map((project) => (
+          <S.ProjectBox
+            onClick={() => {
+              setModal({ isOpen: true, ...project });
+            }}
+            key={project.title}
+          >
             <Text size={0.8} weight={400} color="#9e9e9e">
-              {date}
+              {project.date}
             </Text>
             <Text size={1.5} weight={400}>
-              {title}
+              {project.title}
             </Text>
             <Text size={1} weight={300}>
-              {description}
+              {project.description}
             </Text>
-            <Tag tagList={tag} />
+            <Tag tagList={project.tag} />
           </S.ProjectBox>
         ))}
       </S.ProjectSection>
-      <AnimatePresence>{modalState.isOpen && <Modal />}</AnimatePresence>
+      <AnimatePresence>
+        {modal.isOpen && <Modal modal={modal} setModal={setModal} />}
+      </AnimatePresence>
     </>
   );
 };

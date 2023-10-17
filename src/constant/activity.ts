@@ -1,6 +1,6 @@
 import {
   HanbookLogoPng,
-  HanowlLogoSvg,
+  HanowlLogoWebp,
   HanumLogoPng,
   HsocLogoPng,
   WeTogetherLogoSvg,
@@ -17,7 +17,7 @@ export const ACTIVITY_LIST: ActivityItems[] = [
     href: 'https://github.com/hansei-hsoc',
   },
   {
-    image: HanowlLogoSvg,
+    image: HanowlLogoWebp,
     href: 'https://github.com/hanowwl',
   },
   {
