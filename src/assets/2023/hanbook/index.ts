@@ -12,3 +12,4 @@ export { default as Hanbook11Png } from './hanbook11.png';
 export { default as Hanbook12Png } from './hanbook12.png';
 export { default as Hanbook13Png } from './hanbook13.png';
 export { default as Hanbook14Png } from './hanbook14.png';
+export { default as HanbookLogoPng } from './hanbook-logo.png';

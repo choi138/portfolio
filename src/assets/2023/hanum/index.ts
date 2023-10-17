@@ -12,3 +12,5 @@ export { default as Hanum11Png } from './hanum11.png';
 export { default as Hanum12Png } from './hanum12.png';
 export { default as Hanum13Png } from './hanum13.png';
 export { default as Hanum14Png } from './hanum14.png';
+export { default as HanumLogoPng } from './hanum-logo.png';
+export { default as HanumModalSvg } from './hanum-modal.svg';

@@ -7,3 +7,4 @@ export { default as Hsoc6Png } from './hsoc6.png';
 export { default as Hsoc7Png } from './hsoc7.png';
 export { default as Hsoc8Png } from './hsoc8.png';
 export { default as Hsoc9Png } from './hsoc9.png';
+export { default as HsocLogoPng } from './hsoc-logo.png';
