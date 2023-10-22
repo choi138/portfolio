@@ -16,15 +16,28 @@ export interface ProjectItems extends StudyItems {
 
 export const PROJECT_LIST: ProjectItems[] = [
   {
+    title: '@choi138/react-text',
+    date: '2023.10.07 ~ ',
+    description: 'React 텍스트 라이브러리',
+    tag: [TYPESCRIPT, REACT_JS, 'Emotion', 'Prettier', PNPM],
+    doing: [
+      '매번 Text 컴포넌트를 만들다보니 불편함을 느껴서 만들게 되었습니다.',
+      'Emotion을 사용하여 스타일링을 하였습니다.',
+    ],
+    modalImg: I.ReactTextModalWebp,
+    images: [I.ReactText1Webp, I.ReactText2Webp, I.ReactText3Webp],
+    github: 'https://github.com/choi138/react-text',
+  },
+  {
     title: '한움 (진행 중)',
     date: '2023.09.02 ~ ',
     description: '한세고의 모든 정보를 알려주는 한세고 도우미 앱, 한움',
-    tag: [TYPESCRIPT, REACT_NATIVE, REACT_JS, 'React-Native-Qrcode-Scanner', 'Yarn'],
+    tag: [TYPESCRIPT, REACT_NATIVE, 'React-Native-Qrcode-Scanner', 'Yarn'],
     doing: [
       '한움 프로젝트의 프론트 1인 개발을 담당했습니다',
       'QR 인식 기능을 추가하여 축제때 부스의 결제를 모두 QR로 진행하였습니다.',
       '한세어울리마당 부분을 3일내에 완성해야하는 촉박한 일정 속에서 개발했습니다.',
-      '한세어울림마당에 실시간 투표 기능을 추가 하였고, 약 5000번의 FE 요청이 있었지만 모두 정상적으로 잘 작동했습니다.',
+      '한세어울림마당에 실시간 투표 기능을 추가 하였고, 행사 당일 모두 정상적으로 잘 작동했습니다.',
     ],
     modalImg: I.HanumModalWebp,
     appStore: 'https://apps.apple.com/us/app/%ED%95%9C%EC%9B%80/',
@@ -56,6 +69,7 @@ export const PROJECT_LIST: ProjectItems[] = [
       '부스의 키를 입력하면 총 잔액을 보여주고, 결제 내역을 확인하는 기능을 구현했습니다.',
       '혹여나 잘못 결제가 된 경우를 대비해, 환불 기능을 구현했습니다.',
     ],
+    link: 'https://dash-pay.hanum.us/',
     github: 'https://github.com/hansei-hanum/hanum-pay-dashboard',
     modalImg: I.HanumModalWebp,
     images: [I.HanumBooth1Webp, I.HanumBooth2Webp, I.HanumBooth3Webp],

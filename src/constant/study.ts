@@ -8,7 +8,7 @@ export const STUDY_LIST: StudyItems[] = [
     title: REACT_NATIVE,
     date: '2023. 09 ~',
     description: `한움(한세사이버보안고 도우미) 앱 개발을 위해 ${REACT_NATIVE}를 공부하였습니다.`,
-    tag: [REACT_NATIVE, REACT_JS, TYPESCRIPT, 'Yarn'],
+    tag: [REACT_NATIVE, TYPESCRIPT, 'Yarn'],
   },
   {
     title: NEXT_JS,
