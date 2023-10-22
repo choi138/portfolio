@@ -25,6 +25,7 @@ export const LinkStyle = styled.a`
   background-position: 0 100%; // 위, 아래
   background-size: 0 0.0625em; // 가로, 세로
   transition: background-size 0.5s;
+  width: fit-content;
   &:hover {
     background-size: 100% 0.0625em;
   }
