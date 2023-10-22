@@ -22,6 +22,7 @@ export const PROJECT_LIST: ProjectItems[] = [
     tag: [TYPESCRIPT, REACT_JS, 'Emotion', 'Prettier', PNPM],
     doing: [
       '매번 Text 컴포넌트를 만들다보니 불편함을 느껴서 만들게 되었습니다.',
+      'Rem을 사용하여 반응형으로 구현하였습니다.',
       'Emotion을 사용하여 스타일링을 하였습니다.',
     ],
     modalImg: I.ReactTextModalWebp,
@@ -34,13 +35,13 @@ export const PROJECT_LIST: ProjectItems[] = [
     description: '한세고의 모든 정보를 알려주는 한세고 도우미 앱, 한움',
     tag: [TYPESCRIPT, REACT_NATIVE, 'React-Native-Qrcode-Scanner', 'Yarn'],
     doing: [
-      '한움 프로젝트의 프론트 1인 개발을 담당했습니다',
+      '한움 프로젝트의 프론트 1인 개발을 담당했습니다.',
       'QR 인식 기능을 추가하여 축제때 부스의 결제를 모두 QR로 진행하였습니다.',
-      '한세어울리마당 부분을 3일내에 완성해야하는 촉박한 일정 속에서 개발했습니다.',
+      '한세어울리마당 부분을 하루안에 완성해야하는 상황속에서 빠르게 개발하였습니다.',
       '한세어울림마당에 실시간 투표 기능을 추가 하였고, 행사 당일 모두 정상적으로 잘 작동했습니다.',
     ],
     modalImg: I.HanumModalWebp,
-    appStore: 'https://apps.apple.com/us/app/%ED%95%9C%EC%9B%80/',
+    appStore: 'https://apps.apple.com/kr/app/%ED%95%9C%EC%9B%80/id6463776026?l',
     playStore: 'https://play.google.com/store/apps/details?id=com.hanowl.hanum',
     github: 'https://github.com/hansei-hanum/hanum-frontend',
     images: [
@@ -131,7 +132,7 @@ export const PROJECT_LIST: ProjectItems[] = [
     title: '학생회 신입부원 모집 사이트',
     date: '2023.03.03 ~ 2023.03.20',
     description: '2023년 학생회 신입부원 모집을 위한 홈페이지',
-    tag: [TYPESCRIPT, REACT_JS, 'Emotion', 'Emotion', 'Prettier', 'Yarn'],
+    tag: [TYPESCRIPT, REACT_JS, 'Emotion', 'Prettier', 'Yarn'],
     doing: [
       '첫 협업으로 Emotion, ESLint 그리고 Prettier를 사용하는 계기가 되었습니다.',
       '선배님들의 코드 리뷰를 통해 코드를 깔끔하게 작성하는 방법을 배웠습니다.',

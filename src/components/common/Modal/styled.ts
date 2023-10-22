@@ -92,11 +92,12 @@ export const ModalImageLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `;
 
 export const ModalImage = styled.img`
   width: auto;
-  max-width: 96%;
+  max-width: 100%;
   height: auto;
   max-height: 40rem;
   border-radius: 10px;

@@ -5,6 +5,7 @@ import { Text, TextContainer } from '@choi138/react-text';
 import { LiStyle, LinkStyle, colors } from 'src/styles';
 
 import { Tag } from '../Tag';
+import { SectionText } from '../SectionText';
 
 export interface SectionProps {
   title: string;
@@ -28,18 +29,13 @@ export const Section: React.FC<SectionProps> = ({ title, date, link, description
       <TextContainer flexDirection="column" rowGap={0.4}>
         {link ? (
           <>
-            <Text size={0.9} color={colors.darkGray} weight={300} lineHeight={1.4}>
-              {description}
-              <br />
-              <LinkStyle href={link} target="_blank" rel="noreferrer">
-                {link}
-              </LinkStyle>
-            </Text>
+            <SectionText description={description} />
+            <LinkStyle href={link} target="_blank" rel="noreferrer">
+              {link}
+            </LinkStyle>
           </>
         ) : (
-          <Text size={0.9} color={colors.darkGray} weight={300}>
-            {description}
-          </Text>
+          <SectionText description={description} />
         )}
         <Tag tagList={tag} />
       </TextContainer>
