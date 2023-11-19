@@ -11,14 +11,11 @@ export const MainPage: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener('resize', () => {
-      window.location.reload();
+      sectionsRef.current[page].scrollIntoView({ behavior: 'smooth' });
     });
 
-    return () =>
-      window.removeEventListener('resize', () => {
-        window.location.reload();
-      });
-  }, []);
+    sectionsRef.current[page].scrollIntoView({ behavior: 'smooth' });
+  }, [page]);
 
   return (
     <>

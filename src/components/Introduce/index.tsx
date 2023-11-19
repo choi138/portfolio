@@ -35,7 +35,7 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
   },
   {
     title: '나이',
-    value: '2006.05.24 (18세) 🇰🇷',
+    value: '2006.05.24 🇰🇷',
   },
   {
     title: '학력',
