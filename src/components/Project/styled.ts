@@ -31,5 +31,14 @@ export const ProjectBox = styled.div`
     & > :first-of-type {
       color: ${colors.primary};
     }
+    & > .project-box-header > :last-of-type {
+      color: ${colors.primary};
+    }
   }
+`;
+
+export const ProjectBoxHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

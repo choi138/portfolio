@@ -27,9 +27,14 @@ export const Project: React.FC = () => {
             }}
             key={project.title}
           >
-            <Text size={0.8} weight={400} color="#9e9e9e">
-              {project.date}
-            </Text>
+            <S.ProjectBoxHeader className="project-box-header">
+              <Text size={0.8} weight={400} color="#9e9e9e">
+                {project.date}
+              </Text>
+              <Text size={0.8} weight={400} color="#9e9e9e">
+                더 보기 클릭
+              </Text>
+            </S.ProjectBoxHeader>
             <Text size={1.5} weight={400}>
               {project.title}
             </Text>
