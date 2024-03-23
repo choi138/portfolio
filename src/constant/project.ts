@@ -1,6 +1,16 @@
 import * as I from 'src/assets';
 
-import { NEXT_JS, PNPM, REACT_JS, REACT_NATIVE, RECOIL, TYPESCRIPT } from './skillName';
+import {
+  EMOTION,
+  NEXT_JS,
+  PNPM,
+  REACT_JS,
+  REACT_NATIVE,
+  RECOIL,
+  TYPESCRIPT,
+  PRETTIER,
+  NESTJS,
+} from './skillName';
 import { StudyItems } from './study';
 
 export interface ProjectItems extends StudyItems {
@@ -16,10 +26,38 @@ export interface ProjectItems extends StudyItems {
 
 export const PROJECT_LIST: ProjectItems[] = [
   {
+    title: '위밋',
+    date: '2023.12.28 ~ 2024.02.01',
+    description: '맛집과 할 일 추천해주는 사이트 "위밋"',
+    tag: [TYPESCRIPT, REACT_JS, EMOTION, 'Zustand', NESTJS, 'Prsima', 'OpenAi'],
+    doing: [
+      '프론트엔드와 백엔드를 담당하였습니다',
+      'Zustand를 사용하여 상태관리를 하였습니다.',
+      'useDebounce 커스텀 훅을 만들어 실시간 검색 변환 기능을 구현하였습니다.',
+      'react-kakao-maps-sdk를 사용하여 지도를 구현하였습니다.',
+      '백엔드에서 온 응답을 이용하여 map으로 표시하는 기능을 구현하였습니다.',
+      'chatGpt3.5를 사용하여 각 지역에 대한 추천 서비스를 구현했습니다',
+      'naver open api를 사용하여 검색 기능을 구현했습니다.',
+    ],
+    modalImg: I.WemeetModalWebp,
+    images: [
+      I.Wemeet1Webp,
+      I.Wemeet2Webp,
+      I.Wemeet3Webp,
+      I.Wemeet4Webp,
+      I.Wemeet5Webp,
+      I.Wemeet6Webp,
+      I.Wemeet7Webp,
+      I.Wemeet8Webp,
+      I.Wemeet9Webp,
+    ],
+    github: 'https://github.com/we-meetting/weMeet-frontend',
+  },
+  {
     title: '@choi138/react-text',
     date: '2023.10.07 ~ ',
-    description: 'React 텍스트 라이브러리',
-    tag: [TYPESCRIPT, REACT_JS, 'Emotion', 'Prettier', PNPM],
+    description: 'React.js 텍스트 라이브러리',
+    tag: [TYPESCRIPT, REACT_JS, EMOTION, PRETTIER, PNPM],
     doing: [
       '매번 Text 컴포넌트를 만들다보니 불편함을 느껴서 만들게 되었습니다.',
       'Rem을 사용하여 반응형으로 구현하였습니다.',
@@ -132,7 +170,7 @@ export const PROJECT_LIST: ProjectItems[] = [
     title: '학생회 신입부원 모집 사이트',
     date: '2023.03.03 ~ 2023.03.20',
     description: '2023년 학생회 신입부원 모집을 위한 홈페이지',
-    tag: [TYPESCRIPT, REACT_JS, 'Emotion', 'Prettier', 'Yarn'],
+    tag: [TYPESCRIPT, REACT_JS, 'Emotion', PRETTIER, 'Yarn'],
     doing: [
       '첫 협업으로 Emotion, ESLint 그리고 Prettier를 사용하는 계기가 되었습니다.',
       '선배님들의 코드 리뷰를 통해 코드를 깔끔하게 작성하는 방법을 배웠습니다.',

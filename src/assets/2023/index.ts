@@ -1,5 +1,5 @@
 export * from './hanbook';
-export * from './hanowl';
+export * from './recruit.hanowl.com';
 export * from './hsoc';
 export * from './hanum';
 export * from './hanumBooth';

@@ -7,7 +7,7 @@ export const STUDY_LIST: StudyItems[] = [
   {
     title: REACT_NATIVE,
     date: '2023. 09 ~',
-    description: `한세사이버보안고 도우미로서, '한움' 앱 개발을 위해 ${REACT_NATIVE}를 공부하였습니다. \n ${REACT_NATIVE}를 사용하여 앱 알림, QR 인식, 실시간 투표, 달력 기능 등을 구현했습니다.`,
+    description: `한세사이버보안고 도우미로서, '한움' 앱 개발을 위해 ${REACT_NATIVE}를 공부하였습니다. \n ${REACT_NATIVE}를 사용하여 바텀 시트, 대나무 숲, QR 인식, 실시간 투표, 달력 기능 등을 구현했습니다.`,
     tag: [REACT_NATIVE, TYPESCRIPT, 'Yarn'],
   },
   {

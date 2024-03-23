@@ -8,3 +8,4 @@ export { default as Wemeet7Webp } from './7.webp';
 export { default as Wemeet8Webp } from './8.webp';
 export { default as Wemeet9Webp } from './9.webp';
 export { default as WemeetLogo } from './logo.png';
+export { default as WemeetModalWebp } from './modal.png';

@@ -6,3 +6,5 @@ export const NODE_JS = 'Node.js';
 export const NESTJS = 'NestJs';
 export const RECOIL = 'Recoil';
 export const PNPM = 'Pnpm';
+export const EMOTION = 'Emotion';
+export const PRETTIER = 'Prettier';

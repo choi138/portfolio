@@ -5,6 +5,12 @@ export interface AwardItems extends StudyItems {}
 
 export const AWARD_LIST: AwardItems[] = [
   {
+    title: '2023년 중학생 정보보안 콘테스트 운영',
+    date: '2023. 11. 11',
+    description: `2023년 교외 CTF대회 중학생 정보보안 콘테스트의 운영을 총괄하여 성공적으로 진행했습니다.\nCTFd를 통하여 모집과 추천서를 받았고, 부원과 함께 프록시 서버를 구축하여 대회를 진행했습니다.`,
+    tag: ['CTF', 'HISCON', '한세고', 'CTFd'],
+  },
+  {
     title: '2023년 교내 CTF 대회 운영',
     date: '2023. 09. 27',
     description:
@@ -28,7 +34,7 @@ export const AWARD_LIST: AwardItems[] = [
   {
     title: '2022년 교내 CTF 대회 운영',
     date: '2022. 09. 27',
-    description: '2022년 HISCON 교내 CTF 대회를 성공적으로 운영했습니다.',
+    description: '2022년 교내 CTF 대회 HISCON을 성공적으로 운영했습니다.',
     tag: ['CTF', 'HISCON', '한세고', 'CTFd'],
   },
   {

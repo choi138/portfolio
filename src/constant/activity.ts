@@ -4,6 +4,7 @@ import {
   HanumLogoWebp,
   HsocLogoWebp,
   WeTogetherLogoWebp,
+  WemeetLogo,
 } from 'src/assets';
 
 export interface ActivityItems {
@@ -31,5 +32,9 @@ export const ACTIVITY_LIST: ActivityItems[] = [
   {
     image: HanumLogoWebp,
     href: 'https://github.com/hansei-hanum',
+  },
+  {
+    image: WemeetLogo,
+    href: 'https://github.com/we-meetting',
   },
 ];
