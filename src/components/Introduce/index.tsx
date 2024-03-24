@@ -97,8 +97,8 @@ export const Introduce: React.FC = () => {
         </S.IntroduceSection>
         <S.IntroduceSection>
           {ABOUT_ME_LIST.map(({ title, subTitle, date, description, tag, link }) => (
-            <article>
-              <Title title={title} key={title} />
+            <article key={title}>
+              <Title title={title} />
               <UlStyle key={subTitle}>
                 <Section
                   title={subTitle}

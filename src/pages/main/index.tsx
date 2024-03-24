@@ -42,7 +42,7 @@ export const MainPage: React.FC = () => {
       <Project />
       <S.NavbarContainer opacity={page !== 1 ? 1 : 0}>
         <BiLeftArrowAlt size={30} onClick={handlePrevClick} />
-        <S.NavbarRightIcon size={30} onClick={handleNextClick} opacity={page === 4 ? 0 : 1} />
+        <S.NavbarRightIcon size={30} onClick={handleNextClick} opacity={page === 5 ? 0 : 1} />
       </S.NavbarContainer>
     </S.MainPageContainer>
   );

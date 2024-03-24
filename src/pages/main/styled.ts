@@ -7,9 +7,8 @@ export const MainPageContainer = styled.main`
   width: 100%;
   height: 100%;
   scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-  overflow-y: hidden;
   scroll-behavior: smooth;
+  overflow-x: scroll;
 `;
 
 export const NavbarContainer = styled.div<{ opacity?: number }>`
