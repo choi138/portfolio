@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { BsChevronLeft, BsChevronRight, BsGithub } from 'react-icons/bs';
 import { BiLogoPlayStore } from 'react-icons/bi';
 import { FiExternalLink } from 'react-icons/fi';
@@ -8,6 +8,7 @@ import { Text, TextContainer } from '@choi138/react-text';
 
 import { ModalStateProps } from 'src/components/Project';
 import { colors } from 'src/styles';
+import { useGetWindowSize } from 'src/hooks';
 
 import * as S from './styled';
 
@@ -17,23 +18,39 @@ export interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { windowSize } = useGetWindowSize();
+  const [currentImage, setCurrentImage] = useState(1);
+  const imageSliderRef = useRef<HTMLDivElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+
+  const isMobile = windowSize <= 767;
+
+  const onScroll = (e: React.UIEvent) => {
+    const scrollPosition = e.currentTarget.scrollLeft;
+
+    const imageWidth = imageWrapperRef.current?.clientWidth || 0;
+    const currentImage = Math.floor(scrollPosition / imageWidth);
+
+    setCurrentImage(currentImage + 1);
+  };
 
   const handlePrevClick = () => {
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 && modal.images ? modal.images.length - 1 : prevIndex - 1,
-    );
+    if (imageSliderRef.current) {
+      currentImage !== 1 && setCurrentImage((prev) => prev - 1);
+      imageSliderRef.current.scrollLeft -= windowSize / 2;
+    }
   };
 
   const handleNextClick = () => {
-    setCurrentImageIndex((prevIndex) =>
-      modal.images && prevIndex === modal.images.length - 1 ? 0 : prevIndex + 1,
-    );
+    if (imageSliderRef.current) {
+      currentImage !== modal.images?.length && setCurrentImage((prev) => prev + 1);
+      imageSliderRef.current.scrollLeft += windowSize / 2;
+    }
   };
 
   const variants = {
-    open: { opacity: 1 },
-    closed: { opacity: 0 },
+    show: { opacity: 1 },
+    hidden: { opacity: 0 },
   };
 
   const linkSettings = {
@@ -43,7 +60,7 @@ export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
 
   return (
     <S.ModalWrapper
-      animate={modal.isOpen ? 'open' : 'closed'}
+      animate={modal.isOpen ? 'show' : 'hidden'}
       variants={variants}
       transition={{ duration: 0.12 }}
       initial={{ opacity: 0 }}
@@ -109,30 +126,45 @@ export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
             </S.ModalUl>
           </S.ModalSection>
         </S.ModalSectionContainer>
-        <S.ModalSection>
-          <S.ModalImageContainer>
-            {modal.images?.length !== 1 ? (
-              <>
+        <S.ModalImageContainer>
+          <Text size={0.9} weight={400}>
+            {currentImage}/{modal.images && modal.images?.length}
+          </Text>
+          <S.ModalImageSliderContainer>
+            {!isMobile && (
+              <S.leftIconWrapper
+                variants={variants}
+                animate={currentImage !== 1 ? 'show' : 'hidden'}
+              >
                 <BsChevronLeft size={32} onClick={handlePrevClick}>
                   Prev
                 </BsChevronLeft>
-                <S.ModalImageLink
-                  href={modal.images && modal.images[currentImageIndex]}
-                  {...linkSettings}
-                >
-                  <S.ModalImage src={modal.images && modal.images[currentImageIndex]} />
-                </S.ModalImageLink>
+              </S.leftIconWrapper>
+            )}
+            <S.ModalImageSliderWrapper>
+              <S.ModalImageSliderInnerContainer ref={imageSliderRef} onScroll={onScroll}>
+                {modal.images &&
+                  modal.images.map((image, index) => (
+                    <S.ModalImageWrapper ref={imageWrapperRef} key={index}>
+                      <S.ModalImageLink href={image} {...linkSettings}>
+                        <S.ModalImage src={image} />
+                      </S.ModalImageLink>
+                    </S.ModalImageWrapper>
+                  ))}
+              </S.ModalImageSliderInnerContainer>
+            </S.ModalImageSliderWrapper>
+            {!isMobile && (
+              <S.rightIconWrapper
+                variants={variants}
+                animate={currentImage !== modal.images?.length ? 'show' : 'hidden'}
+              >
                 <BsChevronRight size={32} onClick={handleNextClick}>
                   Next
                 </BsChevronRight>
-              </>
-            ) : (
-              <S.ModalImageLink href={modal.images[0]} {...linkSettings}>
-                <S.ModalImage src={modal.images[0]} />
-              </S.ModalImageLink>
+              </S.rightIconWrapper>
             )}
-          </S.ModalImageContainer>
-        </S.ModalSection>
+          </S.ModalImageSliderContainer>
+        </S.ModalImageContainer>
       </S.ModalContainer>
     </S.ModalWrapper>
   );

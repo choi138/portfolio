@@ -29,7 +29,8 @@ export const ModalContainer = styled.div`
   left: 50%;
   width: 50%;
   height: 80%;
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
   transform: translate(-50%, -50%);
   background-color: ${colors.white};
   border-radius: 10px;
@@ -37,6 +38,7 @@ export const ModalContainer = styled.div`
   flex-direction: column;
   @media screen and (max-width: 500px) {
     width: 90%;
+    height: 90%;
   }
 `;
 
@@ -80,12 +82,41 @@ export const ModalLi = styled.li`
   margin-bottom: 0.8rem;
 `;
 
-export const ModalImageContainer = styled.div`
+export const ModalImageContainer = styled(ModalSection)`
   border-top: 0.2px solid ${colors.darkGray};
+  padding: 2rem;
+  padding-top: 1rem;
+  row-gap: 1.4rem;
+`;
+
+export const ModalImageSliderContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+`;
+
+export const ModalImageSliderWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+export const ModalImageSliderInnerContainer = styled.div`
+  display: flex;
+  height: 100%;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  column-gap: 1.4rem;
+`;
+
+export const ModalImageWrapper = styled.div`
+  flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  float: left;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 export const ModalImageLink = styled.a`
@@ -109,3 +140,15 @@ export const ModalLinkContainer = styled.div`
   align-items: center;
   column-gap: 0.6rem;
 `;
+
+export const ModalLeftIconWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+`;
+
+export const rightIconWrapper = styled(motion.div)``;
+
+export const leftIconWrapper = styled(motion.div)``;
