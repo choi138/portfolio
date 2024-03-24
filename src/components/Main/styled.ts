@@ -35,6 +35,23 @@ const translate = keyframes`
 }
 `;
 
+export const MainContainer = styled.section`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  flex: 0 0 auto;
+  background: linear-gradient(0deg, #4c52c0 61%, #1c156a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+  row-gap: 5rem;
+  z-index: 10;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+`;
+
 export const MainBottomImage = styled.img`
   position: absolute;
   bottom: 0;

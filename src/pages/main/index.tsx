@@ -1,43 +1,49 @@
-import React, { useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { BiLeftArrowAlt } from 'react-icons/bi';
 
 import { Awards, Introduce, Main, Project, Study } from 'src/components';
-import { useHandleSection } from 'src/hooks';
 
 import * as S from './styled';
 
 export const MainPage: React.FC = () => {
-  const { page, sectionsRef, handleNext, handlePrev } = useHandleSection();
+  const mainPageRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      sectionsRef.current[page].scrollIntoView({ behavior: 'smooth' });
-    });
+  const [page, setPage] = useState(0);
 
-    sectionsRef.current[page].scrollIntoView({ behavior: 'smooth' });
-  }, [page]);
+  const onScroll = (e: React.UIEvent) => {
+    const scrollPosition = e.currentTarget.scrollLeft;
+
+    const pageWidth = mainPageRef.current?.clientWidth || 0;
+    const page = Math.floor(scrollPosition / pageWidth);
+
+    setPage(page + 1);
+  };
+
+  const handlePrevClick = () => {
+    if (mainPageRef.current) {
+      setPage(page - 1);
+      mainPageRef.current.scrollLeft -= window.innerWidth;
+    }
+  };
+
+  const handleNextClick = () => {
+    if (mainPageRef.current) {
+      setPage(page + 1);
+      mainPageRef.current.scrollLeft += window.innerWidth;
+    }
+  };
 
   return (
-    <>
-      <S.MainPageBgSection ref={(el) => (sectionsRef.current[0] = el!)}>
-        <Main handleNext={handleNext} />
-      </S.MainPageBgSection>
-      <S.MainPageSection ref={(el) => (sectionsRef.current[1] = el!)}>
-        <Introduce />
-      </S.MainPageSection>
-      <S.MainPageSection ref={(el) => (sectionsRef.current[2] = el!)}>
-        <Study />
-      </S.MainPageSection>
-      <S.MainPageSection ref={(el) => (sectionsRef.current[3] = el!)}>
-        <Awards />
-      </S.MainPageSection>
-      <S.MainPageSection ref={(el) => (sectionsRef.current[4] = el!)}>
-        <S.NavbarContainer opacity={page !== 0 ? 1 : 0}>
-          <BiLeftArrowAlt size={30} onClick={handlePrev} />
-          <S.NavbarRightIcon size={30} onClick={handleNext} opacity={page === 4 ? 0 : 1} />
-        </S.NavbarContainer>
-        <Project />
-      </S.MainPageSection>
-    </>
+    <S.MainPageContainer ref={mainPageRef} onScroll={onScroll}>
+      <Main handleNext={handleNextClick} />
+      <Introduce />
+      <Study />
+      <Awards />
+      <Project />
+      <S.NavbarContainer opacity={page !== 1 ? 1 : 0}>
+        <BiLeftArrowAlt size={30} onClick={handlePrevClick} />
+        <S.NavbarRightIcon size={30} onClick={handleNextClick} opacity={page === 4 ? 0 : 1} />
+      </S.NavbarContainer>
+    </S.MainPageContainer>
   );
 };

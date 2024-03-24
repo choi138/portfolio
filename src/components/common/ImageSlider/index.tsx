@@ -62,18 +62,16 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({
           Prev
         </BsChevronLeft>
       </S.LeftIconWrapper>
-      <S.ImageSliderWrapper>
-        <S.ImageSliderInnerContainer ref={imageSliderRef} onScroll={onScroll}>
-          {images &&
-            images.map((image, index) => (
-              <S.ImageWrapper ref={imageWrapperRef} key={index}>
-                <S.ImageLink href={image} {...linkSettings}>
-                  <S.Image src={image} />
-                </S.ImageLink>
-              </S.ImageWrapper>
-            ))}
-        </S.ImageSliderInnerContainer>
-      </S.ImageSliderWrapper>
+      <S.ImageSlider ref={imageSliderRef} onScroll={onScroll}>
+        {images &&
+          images.map((image, index) => (
+            <S.ImageWrapper ref={imageWrapperRef} key={index}>
+              <S.ImageLink href={image} {...linkSettings}>
+                <S.Image src={image} />
+              </S.ImageLink>
+            </S.ImageWrapper>
+          ))}
+      </S.ImageSlider>
       <S.RightIconWrapper
         variants={variants}
         animate={currentImage !== images?.length ? 'show' : 'hidden'}

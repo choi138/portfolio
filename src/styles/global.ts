@@ -25,11 +25,9 @@ export const globalStyle = css`
   #app,
   #root,
   #__next {
+    overflow: hidden;
     width: 100%;
     height: 100%;
-    display: flex;
-    overflow: hidden;
-    scroll-behavior: smooth;
     color: ${colors.black};
     background-color: ${colors.white};
   }

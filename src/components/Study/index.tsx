@@ -4,12 +4,13 @@ import { UlStyle } from 'src/styles';
 import { STUDY_LIST } from 'src/constant';
 
 import { Section, Title } from '../common';
+import { SectionLayout } from '../layouts';
 
 import * as S from './styled';
 
 export const Study: React.FC = () => {
   return (
-    <>
+    <SectionLayout>
       <Title title="📚 공부" />
       <S.StudyWrapper>
         <UlStyle>
@@ -23,6 +24,6 @@ export const Study: React.FC = () => {
           ))}
         </UlStyle>
       </S.StudyWrapper>
-    </>
+    </SectionLayout>
   );
 };

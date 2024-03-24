@@ -29,7 +29,7 @@ export const Main: React.FC<MainProps> = ({ handleNext }) => {
     };
   }, []);
   return (
-    <>
+    <S.MainContainer>
       <S.MainBottomImage src={BackgroundImage} loading="lazy" />
       <S.MainCanvas id="bgCanvas"></S.MainCanvas>
       <TextContainer
@@ -58,9 +58,9 @@ export const Main: React.FC<MainProps> = ({ handleNext }) => {
           <S.MainIcon />
         </S.MainIconContainer>
         <Text size={0.9} color={colors.white} weight={500}>
-          클릭하여 시작하기
+          클릭하여 또는 스크롤하여 시작하기
         </Text>
       </TextContainer>
-    </>
+    </S.MainContainer>
   );
 };

@@ -7,6 +7,7 @@ import { ABOUT_ME_LIST, ACTIVITY_LIST } from 'src/constant';
 import { LinkStyle, UlStyle, colors } from 'src/styles';
 
 import { Section, Title } from '../common';
+import { SectionLayout } from '../layouts';
 
 import * as S from './styled';
 
@@ -73,7 +74,7 @@ export const INTRODUCE_LIST: IntroduceItems[] = [
 
 export const Introduce: React.FC = () => {
   return (
-    <>
+    <SectionLayout>
       <S.IntroduceTitle>프로필 소개</S.IntroduceTitle>
       <S.IntroduceContainer>
         <S.IntroduceSection>
@@ -111,6 +112,6 @@ export const Introduce: React.FC = () => {
           ))}
         </S.IntroduceSection>
       </S.IntroduceContainer>
-    </>
+    </SectionLayout>
   );
 };

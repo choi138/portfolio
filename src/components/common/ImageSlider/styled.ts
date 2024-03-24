@@ -10,14 +10,10 @@ export const ImageSliderContainer = styled.div`
   justify-content: center;
 `;
 
-export const ImageSliderWrapper = styled.div`
+export const ImageSlider = styled.div`
   width: 100%;
   height: 100%;
-`;
-
-export const ImageSliderInnerContainer = styled.div`
   display: flex;
-  height: 100%;
   scroll-snap-type: x mandatory;
   overflow-x: scroll;
   scroll-behavior: smooth;

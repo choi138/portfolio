@@ -4,12 +4,13 @@ import { UlStyle } from 'src/styles';
 import { AWARD_LIST } from 'src/constant';
 
 import { Section, Title } from '../common';
+import { SectionLayout } from '../layouts';
 
 import * as S from './styled';
 
 export const Awards: React.FC = () => {
   return (
-    <>
+    <SectionLayout>
       <Title title="🏆 수상 및 경력" />
       <S.StudyWrapper>
         <UlStyle>
@@ -23,6 +24,6 @@ export const Awards: React.FC = () => {
           ))}
         </UlStyle>
       </S.StudyWrapper>
-    </>
+    </SectionLayout>
   );
 };
