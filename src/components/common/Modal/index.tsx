@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { BsChevronLeft, BsChevronRight, BsGithub } from 'react-icons/bs';
+import React, { useState } from 'react';
+import { BsGithub } from 'react-icons/bs';
 import { BiLogoPlayStore } from 'react-icons/bi';
 import { FiExternalLink } from 'react-icons/fi';
 import { FaAppStoreIos } from 'react-icons/fa';
@@ -8,7 +8,8 @@ import { Text, TextContainer } from '@choi138/react-text';
 
 import { ModalStateProps } from 'src/components/Project';
 import { colors } from 'src/styles';
-import { useGetWindowSize } from 'src/hooks';
+
+import { ImageSlider } from '../ImageSlider';
 
 import * as S from './styled';
 
@@ -18,44 +19,15 @@ export interface ModalProps {
 }
 
 export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
-  const { windowSize } = useGetWindowSize();
   const [currentImage, setCurrentImage] = useState(1);
-  const imageSliderRef = useRef<HTMLDivElement>(null);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
-
-  const isMobile = windowSize <= 767;
-
-  const onScroll = (e: React.UIEvent) => {
-    const scrollPosition = e.currentTarget.scrollLeft;
-
-    const imageWidth = imageWrapperRef.current?.clientWidth || 0;
-    const currentImage = Math.floor(scrollPosition / imageWidth);
-
-    setCurrentImage(currentImage + 1);
-  };
-
-  const handlePrevClick = () => {
-    if (imageSliderRef.current) {
-      currentImage !== 1 && setCurrentImage((prev) => prev - 1);
-      imageSliderRef.current.scrollLeft -= windowSize / 2;
-    }
-  };
-
-  const handleNextClick = () => {
-    if (imageSliderRef.current) {
-      currentImage !== modal.images?.length && setCurrentImage((prev) => prev + 1);
-      imageSliderRef.current.scrollLeft += windowSize / 2;
-    }
+  const linkSettings = {
+    target: '_blank',
+    rel: 'noreferrer',
   };
 
   const variants = {
     show: { opacity: 1 },
     hidden: { opacity: 0 },
-  };
-
-  const linkSettings = {
-    target: '_blank',
-    rel: 'noreferrer',
   };
 
   return (
@@ -130,40 +102,11 @@ export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
           <Text size={0.9} weight={400}>
             {currentImage}/{modal.images && modal.images?.length}
           </Text>
-          <S.ModalImageSliderContainer>
-            {!isMobile && (
-              <S.leftIconWrapper
-                variants={variants}
-                animate={currentImage !== 1 ? 'show' : 'hidden'}
-              >
-                <BsChevronLeft size={32} onClick={handlePrevClick}>
-                  Prev
-                </BsChevronLeft>
-              </S.leftIconWrapper>
-            )}
-            <S.ModalImageSliderWrapper>
-              <S.ModalImageSliderInnerContainer ref={imageSliderRef} onScroll={onScroll}>
-                {modal.images &&
-                  modal.images.map((image, index) => (
-                    <S.ModalImageWrapper ref={imageWrapperRef} key={index}>
-                      <S.ModalImageLink href={image} {...linkSettings}>
-                        <S.ModalImage src={image} />
-                      </S.ModalImageLink>
-                    </S.ModalImageWrapper>
-                  ))}
-              </S.ModalImageSliderInnerContainer>
-            </S.ModalImageSliderWrapper>
-            {!isMobile && (
-              <S.rightIconWrapper
-                variants={variants}
-                animate={currentImage !== modal.images?.length ? 'show' : 'hidden'}
-              >
-                <BsChevronRight size={32} onClick={handleNextClick}>
-                  Next
-                </BsChevronRight>
-              </S.rightIconWrapper>
-            )}
-          </S.ModalImageSliderContainer>
+          <ImageSlider
+            images={modal.images || []}
+            currentImage={currentImage}
+            setCurrentImage={setCurrentImage}
+          />
         </S.ModalImageContainer>
       </S.ModalContainer>
     </S.ModalWrapper>

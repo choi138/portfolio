@@ -36,7 +36,7 @@ export const ModalContainer = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 680px) {
     width: 90%;
     height: 90%;
   }
@@ -89,66 +89,8 @@ export const ModalImageContainer = styled(ModalSection)`
   row-gap: 1.4rem;
 `;
 
-export const ModalImageSliderContainer = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-export const ModalImageSliderWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-export const ModalImageSliderInnerContainer = styled.div`
-  display: flex;
-  height: 100%;
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-  column-gap: 1.4rem;
-`;
-
-export const ModalImageWrapper = styled.div`
-  flex: 0 0 auto;
-  width: 100%;
-  height: 100%;
-  float: left;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-`;
-
-export const ModalImageLink = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-`;
-
-export const ModalImage = styled.img`
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 40rem;
-  border-radius: 10px;
-  border: 1px solid ${colors.softWhite};
-`;
-
 export const ModalLinkContainer = styled.div`
   display: flex;
   align-items: center;
   column-gap: 0.6rem;
 `;
-
-export const ModalLeftIconWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-`;
-
-export const rightIconWrapper = styled(motion.div)``;
-
-export const leftIconWrapper = styled(motion.div)``;

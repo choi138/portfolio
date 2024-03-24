@@ -3,3 +3,4 @@ export * from './Title';
 export * from './Tag';
 export * from './Modal';
 export * from './SectionText';
+export * from './ImageSlider';
