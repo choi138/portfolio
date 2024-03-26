@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import * as S from './styled';
 export interface SectionLayoutProps {
@@ -6,5 +6,12 @@ export interface SectionLayoutProps {
 }
 
 export const SectionLayout: React.FC<SectionLayoutProps> = ({ children }) => {
-  return <S.SectionLayoutContainer>{children}</S.SectionLayoutContainer>;
+  const layoutRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!layoutRef.current) return;
+    layoutRef.current.scrollTo(0, 0);
+  }, [children]);
+
+  return <S.SectionLayoutContainer ref={layoutRef}>{children}</S.SectionLayoutContainer>;
 };

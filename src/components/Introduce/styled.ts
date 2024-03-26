@@ -30,6 +30,7 @@ export const IntroduceTitle = styled.h2`
 
 export const IntroduceImageContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   column-gap: 0.4rem;
 `;
 

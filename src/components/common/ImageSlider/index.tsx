@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 
 import * as S from './styled';
@@ -17,6 +17,8 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({
   const imageSliderRef = useRef<HTMLDivElement>(null);
   const imageWrapperRef = useRef<HTMLDivElement>(null);
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const getWindowSize = () => {
     if (typeof window !== 'undefined') {
       return window.innerWidth;
@@ -34,13 +36,23 @@ export const ImageSlider: React.FC<ImageSliderProps> = ({
     rel: 'noreferrer',
   };
 
+  // const imageWidth = imageWrapperRef.current?.clientWidth || 0;
+  //   const currentImage = Math.round(Math.floor(scrollPosition) / imageWidth);
+
+  //   if (currentImage > -1) {
+  //     setCurrentImage(currentImage + 1);
+  //   }
+
   const onScroll = (e: React.UIEvent) => {
-    const scrollPosition = e.currentTarget.scrollLeft;
+    const newScrollPosition = e.currentTarget.scrollLeft;
 
-    const imageWidth = imageWrapperRef.current?.clientWidth || 0;
-    const currentImage = Math.floor(scrollPosition / imageWidth);
+    if (newScrollPosition > scrollPosition && currentImage > 0) {
+      setCurrentImage((prev) => prev + 1);
+    } else if (newScrollPosition < scrollPosition && currentImage <= images?.length) {
+      setCurrentImage((prev) => prev - 1);
+    }
 
-    setCurrentImage(currentImage + 1);
+    setScrollPosition(newScrollPosition);
   };
 
   const handlePrevClick = () => {

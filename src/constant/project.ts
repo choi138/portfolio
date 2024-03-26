@@ -105,6 +105,8 @@ export const PROJECT_LIST: ProjectItems[] = [
       'https://cdn.choi138.com/projects/hanowl.com/11.webp',
       'https://cdn.choi138.com/projects/hanowl.com/12.webp',
       'https://cdn.choi138.com/projects/hanowl.com/13.webp',
+      'https://cdn.choi138.com/projects/hanowl.com/14.webp',
+      'https://cdn.choi138.com/projects/hanowl.com/15.webp',
     ],
     github: 'https://github.com/hanowwl/hanowl.com',
     link: 'https://hanowl.com',

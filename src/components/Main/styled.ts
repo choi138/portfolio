@@ -37,7 +37,7 @@ const translate = keyframes`
 
 export const MainContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: relative;
   flex: 0 0 auto;
   background: linear-gradient(0deg, #4c52c0 61%, #1c156a 100%);
