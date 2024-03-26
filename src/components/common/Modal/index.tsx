@@ -100,7 +100,7 @@ export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
         </S.ModalSectionContainer>
         <S.ModalImageContainer>
           <Text size={0.9} weight={400}>
-            {currentImage}/{modal.images && modal.images?.length}
+            {currentImage}/{modal.images && modal.images?.length + 1}
           </Text>
           <ImageSlider
             images={modal.images || []}
