@@ -20,14 +20,14 @@ export const MainPage: React.FC = () => {
   };
 
   const handlePrevClick = () => {
-    if (mainPageRef.current) {
+    if (mainPageRef.current && page > 1) {
       setPage(page - 1);
       mainPageRef.current.scrollLeft -= window.innerWidth;
     }
   };
 
   const handleNextClick = () => {
-    if (mainPageRef.current) {
+    if (mainPageRef.current && page <= 4) {
       setPage(page + 1);
       mainPageRef.current.scrollLeft += window.innerWidth;
     }
@@ -40,9 +40,9 @@ export const MainPage: React.FC = () => {
       <Study />
       <Awards />
       <Project />
-      <S.NavbarContainer opacity={page !== 1 ? 1 : 0}>
+      <S.NavbarContainer opacity={page >= 1 ? 1 : 0}>
         <BiLeftArrowAlt size={30} onClick={handlePrevClick} />
-        <S.NavbarRightIcon size={30} onClick={handleNextClick} opacity={page === 5 ? 0 : 1} />
+        <S.NavbarRightIcon size={30} onClick={handleNextClick} opacity={page > 4 ? 0 : 1} />
       </S.NavbarContainer>
     </S.MainPageContainer>
   );
