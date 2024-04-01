@@ -94,7 +94,7 @@ export const Modal: React.FC<ModalProps> = ({ setModal, modal }) => {
               이런걸 했어요
             </Text>
             <S.ModalUl>
-              {modal.doing?.map((item) => <S.ModalLi key={item}>{item}</S.ModalLi>)}
+              {modal.doing?.map((item, index) => <S.ModalLi key={index}>{item}</S.ModalLi>)}
             </S.ModalUl>
           </S.ModalSection>
         </S.ModalSectionContainer>

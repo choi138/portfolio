@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   EMOTION,
   NEXT_JS,
@@ -19,7 +21,7 @@ export interface ProjectItems extends StudyItems {
   github: string;
   appStore?: string;
   playStore?: string;
-  doing: string[];
+  doing: string[] | React.ReactNode[];
 }
 
 export const PROJECT_LIST: ProjectItems[] = [
@@ -29,6 +31,10 @@ export const PROJECT_LIST: ProjectItems[] = [
     description: '한세고의 모든 정보를 알려주는 한세고 도우미 앱, 한움',
     tag: [TYPESCRIPT, REACT_NATIVE, 'React-Native-Qrcode-Scanner', 'Yarn'],
     doing: [
+      <>
+        현재 한세고의 모든 학생들이 사용하는 학교 대표 앱 <strong>"한움"</strong>을 개발하였습니다.
+      </>,
+      '학사일정, 시간표, 급식표, 대나무숲(커뮤니티) 등의 학교 관련 기능들을 전부 개발하였습니다.',
       '대나무숲 기능까지 한움 프로젝트의 프론트 1인 개발을 담당했습니다.',
       '기기의 테마 색깔을 가져와 그에 맞는 테마 색깔을 적용하였습니다.',
       '바텀 시트 라이브러리의 버그로 인해 직접 바텀 시트를 구현하였습니다.',
@@ -83,12 +89,12 @@ export const PROJECT_LIST: ProjectItems[] = [
     title: '2024 학생회 소개 사이트',
     date: '2024.02.22 ~ 2024.03.21',
     description: '2024년 학생회 소개와 지원을 위한 홈페이지',
-    tag: [TYPESCRIPT, REACT_JS, NEXT_JS, 'Zustand', 'Framer-Motion'],
+    tag: [TYPESCRIPT, REACT_JS, NEXT_JS, 'Zustand', 'Framer Motion'],
     doing: [
       '웹 앱을 구현하였습니다',
       'Zustand를 사용하여 앱 인식을 하였습니다',
       '앱 인식 여부에 따른 스타일링 변화를 주었습니다',
-      'Framer를 사용하여 숫자 count 애니메이션과 fade-in 애니메이션을 구현하였습니다',
+      'Framer Motion을 사용하여 숫자 count 애니메이션과 fade-in 애니메이션을 구현하였습니다',
     ],
     modalImg: 'https://cdn.choi138.com/projects/recruit.hanowl.com/logo.webp',
     images: [
@@ -112,18 +118,28 @@ export const PROJECT_LIST: ProjectItems[] = [
     link: 'https://hanowl.com',
   },
   {
-    title: '위밋',
+    title: '위밋 (풀스택)',
     date: '2023.12.28 ~ 2024.02.01',
     description: '맛집과 할 일 추천해주는 사이트 "위밋"',
-    tag: [TYPESCRIPT, REACT_JS, EMOTION, 'Zustand', NESTJS, 'Prsima', 'OpenAi'],
+    tag: [
+      TYPESCRIPT,
+      REACT_JS,
+      EMOTION,
+      'Zustand',
+      'React-Kakao-Maps-Sdk',
+      NESTJS,
+      'Prsima',
+      'OpenAI',
+      'Naver Open API',
+    ],
     doing: [
       '프론트엔드와 백엔드를 담당하였습니다',
       'Zustand를 사용하여 상태관리를 하였습니다.',
       'useDebounce 커스텀 훅을 만들어 실시간 검색 변환 기능을 구현하였습니다.',
       'react-kakao-maps-sdk를 사용하여 지도를 구현하였습니다.',
       '백엔드에서 온 응답을 이용하여 map으로 표시하는 기능을 구현하였습니다.',
-      'chatGpt3.5를 사용하여 각 지역에 대한 추천 서비스를 구현했습니다',
-      'naver open api를 사용하여 검색 기능을 구현했습니다.',
+      'OpenAIdml ChatGpt3.5를 사용하여 각 지역에 대한 추천 서비스를 구현했습니다',
+      'Naver Open Api를 사용하여 검색 기능을 구현했습니다.',
     ],
     modalImg: 'https://cdn.choi138.com/projects/weMeet/modal.png',
     images: [
@@ -141,10 +157,13 @@ export const PROJECT_LIST: ProjectItems[] = [
   },
   {
     title: '@choi138/react-text',
-    date: '2023.10.07 ~ ',
+    date: '2023.10.06 ~ 2023.11.02',
     description: 'React.js 텍스트 라이브러리',
     tag: [TYPESCRIPT, REACT_JS, EMOTION, PRETTIER, PNPM],
     doing: [
+      <>
+        Pnpm을 사용하여 <strong>라이브러리를</strong> 직접 배포하였습니다.
+      </>,
       '매번 Text 컴포넌트를 만들다보니 불편함을 느껴서 만들게 되었습니다.',
       'Rem을 사용하여 반응형으로 구현하였습니다.',
       'Emotion을 사용하여 스타일링을 하였습니다.',
@@ -188,7 +207,10 @@ export const PROJECT_LIST: ProjectItems[] = [
       'Vite',
     ],
     doing: [
-      '우리, 함께 프로젝트의 프론트 1인 개발을 담당했습니다.',
+      <>
+        제6회 한세톤에서 <strong>2등</strong>을 수상했습니다.
+      </>,
+      '"우리, 함께" 프로젝트의 프론트 1인 개발을 담당했습니다.',
       'React-Leaflet 라이브러리를 사용하여 지도 기능을 구현했습니다.',
       '사용자의 위치를 지도에 표시하는 기능을 구현했습니다.',
       'PWA를 사용하여 웹을 앱처럼 사용할 수 있게 구현했습니다.',
@@ -204,8 +226,8 @@ export const PROJECT_LIST: ProjectItems[] = [
     tag: [TYPESCRIPT, REACT_JS, 'Framer-Motion', 'React-Lottie', 'Vite'],
     doing: [
       '한북 프로젝트의 프론트 1인 개발을 담당했습니다.',
-      '기한과 횟수 제한을 통한 동아리 코드를 통해 동아리별로 책을 빌릴 수 있게 구현했습니다.',
-      '학교 안에서만 반납할 수 있게 구현했습니다.',
+      'React-Lottie를 사용하여 성공, 실패, 로딩 애니메이션을 구현했습니다.',
+      '사용자의 위치를 가져와 학교 안에서만 반납할 수 있게 구현했습니다.',
       '처음으로 백엔드와 통신을 React Query를 사용하여 하였습니다.',
     ],
     github: 'https://github.com/hansei-book-management/hanbook-frontend',
@@ -251,12 +273,12 @@ export const PROJECT_LIST: ProjectItems[] = [
   },
   {
     title: '보안관제 동아리 모집 사이트 (풀스택)',
-    date: '2023.02.11 ~ 2023.03.05 (이후 유지보수)',
+    date: '2023.02.11 ~ 2023.03.05',
     description: '2023년 보안관제 동아리 신입부원 모집과 소개 홈페이지',
     tag: [TYPESCRIPT, NEXT_JS, 'React-Hook-Form', 'Prisma', 'MySQL'],
     doing: [
       '프론트, 백엔드, 서버 배포까지 모두 1인 개발을 담당했습니다.',
-      'Next.js를 사용하여 SSR을 방식을 사용했습니다.',
+      'Next.js를 사용하여 SSR을 사용했습니다.',
       'Prisma를 사용하여 데이터베이스 구축과 백엔드 개발을 담당했습니다.',
     ],
     github: 'https://github.com/hansei-hsoc/hsoc-homepage-2023',
@@ -278,12 +300,11 @@ export const PROJECT_LIST: ProjectItems[] = [
     title: 'FMCC',
     date: '2022.12.14 ~ 2023.02.09',
     description: '영화 기본 정보와 예고편을 볼 수 있는 웹 사이트',
-    tag: [TYPESCRIPT, REACT_JS, 'React-Query', RECOIL],
+    tag: [TYPESCRIPT, REACT_JS, 'Slick-Carousel', 'React-Query', 'TMDB API'],
     doing: [
-      '1인 개발을 담당했습니다.',
       '처음으로 직접 사이트를 만들어보았습니다.',
-      'TMDB API를 사용하여 영화 정보를 가져왔습니다.',
-      'React-Slick을 사용하여 슬라이더를 구현했습니다.',
+      'React-Query를 사용하여 TMDB API에 있는 정보를 가져왔습니다.',
+      'React-Slick을 사용하여 이미지 슬라이더를 구현했습니다.',
     ],
     github: 'https://github.com/MovieWebP/fmcc-frontend',
     modalImg: 'https://cdn.choi138.com/projects/fmcc/1.webp',
