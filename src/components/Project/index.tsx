@@ -19,7 +19,7 @@ export const Project: React.FC = () => {
 
   return (
     <SectionLayout>
-      <Title title="🗂️ 지난 프로젝트" subTitle="지금까지 이런걸 해왔어요" />
+      <Title title="🗂️ 지난 프로젝트" subTitle="지금까지 이런 걸 해왔어요" />
       <S.ProjectSection>
         {PROJECT_LIST.map((project) => (
           <S.ProjectBox
